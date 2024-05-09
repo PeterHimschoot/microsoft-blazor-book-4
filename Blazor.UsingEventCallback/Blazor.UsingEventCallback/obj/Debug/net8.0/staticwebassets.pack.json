@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.UsingEventCallback\\Blazor.UsingEventCallback\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Blazor.UsingEventCallback.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Blazor.UsingEventCallback.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.UsingEventCallback\\Blazor.UsingEventCallback\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.UsingEventCallback\\Blazor.UsingEventCallback\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.UsingEventCallback\\Blazor.UsingEventCallback\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.UsingEventCallback\\Blazor.UsingEventCallback\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Blazor.UsingEventCallback.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Blazor.UsingEventCallback.props",
+      "PackagePath": "build\\Blazor.UsingEventCallback.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Blazor.UsingEventCallback.props",
+      "PackagePath": "buildMultiTargeting\\Blazor.UsingEventCallback.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Blazor.UsingEventCallback.props",
+      "PackagePath": "buildTransitive\\Blazor.UsingEventCallback.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
