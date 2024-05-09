@@ -1,0 +1,18 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<div>@RenderModeProvider.GetRenderMode(this)</div>
+
+
+@code {
+
+  [Inject]
+  public required RenderModeProvider RenderModeProvider { get; set; }
+
+
+}

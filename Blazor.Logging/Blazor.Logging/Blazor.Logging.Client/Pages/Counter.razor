@@ -1,0 +1,40 @@
+﻿@page "/counter"
+@inject ILogger<Counter> _logger;
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-info" @onclick="LogDebug">Debug</button>
+<button class="btn btn-warning" @onclick="LogWarning">Warning</button>
+<button class="btn btn-danger" @onclick="LogError">Error</button>
+<button class="btn btn-dark" @onclick="LogCritical">Critical</button>
+
+@code {
+  private int currentCount = 0;
+
+  private void IncrementCount()
+  {
+    currentCount++;
+    _logger.LogInformation("Current count = {currentCount}", currentCount);
+  }
+  private void LogWarning()
+  {
+    _logger.LogWarning("Some warning");
+  }
+  private void LogDebug()
+  {
+    _logger.LogDebug("Hmmmm...");
+  }
+  private void LogError()
+  {
+    _logger.LogError("Some error");
+  }
+  private void LogCritical()
+  {
+    _logger.LogCritical("Aaahhhhh!");
+  }
+}

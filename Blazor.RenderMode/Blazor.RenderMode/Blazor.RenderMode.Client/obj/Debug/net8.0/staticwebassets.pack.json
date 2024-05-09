@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\obj\\Debug\\net8.0\\compressed\\1qsapu3fk2.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Blazor.RenderMode.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Blazor.RenderMode.Client.props",
+      "PackagePath": "build\\Blazor.RenderMode.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Blazor.RenderMode.Client.props",
+      "PackagePath": "buildMultiTargeting\\Blazor.RenderMode.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Blazor.RenderMode.Client.props",
+      "PackagePath": "buildTransitive\\Blazor.RenderMode.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
