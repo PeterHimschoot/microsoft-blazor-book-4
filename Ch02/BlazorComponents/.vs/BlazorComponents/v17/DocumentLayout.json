@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Ch02\\BlazorComponents\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{953C4CE8-9974-4F91-9DF7-EAC3085BFF5D}|BlazorComponents\\BlazorComponents.csproj|c:\\code\\github\\microsoft-blazor-book-4\\ch02\\blazorcomponents\\blazorcomponents\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{953C4CE8-9974-4F91-9DF7-EAC3085BFF5D}|BlazorComponents\\BlazorComponents.csproj|solutionrelative:blazorcomponents\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{953C4CE8-9974-4F91-9DF7-EAC3085BFF5D}|BlazorComponents\\BlazorComponents.csproj|c:\\code\\github\\microsoft-blazor-book-4\\ch02\\blazorcomponents\\blazorcomponents\\blazorcomponents.csproj||{4C9BC7A2-907A-44AA-99EA-D1B57B1A20F8}",
       "RelativeMoniker": "D:0:0:{953C4CE8-9974-4F91-9DF7-EAC3085BFF5D}|BlazorComponents\\BlazorComponents.csproj|solutionrelative:blazorcomponents\\blazorcomponents.csproj||{4C9BC7A2-907A-44AA-99EA-D1B57B1A20F8}"
     }
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,33 +45,16 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Ch02\\BlazorComponents\\BlazorComponents\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "BlazorComponents\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Ch02\\BlazorComponents\\BlazorComponents\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "BlazorComponents\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-24T12:17:40.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "BlazorComponents",
               "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Ch02\\BlazorComponents\\BlazorComponents\\BlazorComponents.csproj",
               "RelativeDocumentMoniker": "BlazorComponents\\BlazorComponents.csproj",
               "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Ch02\\BlazorComponents\\BlazorComponents\\BlazorComponents.csproj",
               "RelativeToolTip": "BlazorComponents\\BlazorComponents.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-24T12:11:07.674Z",
+              "WhenOpened": "2024-05-09T20:28:56.874Z",
               "EditorCaption": ""
             }
           ]
