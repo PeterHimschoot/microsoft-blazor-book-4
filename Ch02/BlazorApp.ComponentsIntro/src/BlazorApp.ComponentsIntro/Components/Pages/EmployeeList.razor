@@ -1,0 +1,12 @@
+﻿@namespace BlazorApp.ComponentsIntro.Employees
+
+@using BlazorApp.ComponentsIntro.Entities
+
+<h3>EmployeeList</h3>
+
+@code {
+  private List<Employee> _employees = [
+    new Employee { FirstName = "John", LastName = "Laplace" },
+    new Employee { FirstName = "Mary", LastName = "Laplace" }
+    ];
+}

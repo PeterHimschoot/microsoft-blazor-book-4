@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "002yMLC+g4pr+/3h94gtk7tVthXVfEbqdfPoN+M/DUfT8SpccCjZ1xjosqjnEplAnIVz2T944QNlX9+5C9I6uA==",
+  "dgSpecHash": "wty746GONmwPazy1mNGGFtvCNu5Vx++eZ/fkCf8q7nACSGMsW/VZSimDiF/AQ3E6Lg2g3Swd9yO2ziOSrsmEuQ==",
   "success": true,
   "projectFilePath": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj",
   "expectedPackageFiles": [

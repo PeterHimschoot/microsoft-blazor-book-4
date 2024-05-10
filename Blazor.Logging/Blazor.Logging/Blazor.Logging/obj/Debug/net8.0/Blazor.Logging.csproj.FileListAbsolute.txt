@@ -39,6 +39,7 @@ C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logg
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging\obj\Debug\net8.0\Blazor.Logging.AssemblyInfo.cs
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging\obj\Debug\net8.0\Blazor.Logging.csproj.CoreCompileInputs.cache
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging\obj\Debug\net8.0\Blazor.Logging.MvcApplicationPartsAssemblyInfo.cache
+C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging\obj\Debug\net8.0\Blazor.Logging.sourcelink.json
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging\obj\Debug\net8.0\staticwebassets.build.json
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging\obj\Debug\net8.0\staticwebassets.development.json
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging\obj\Debug\net8.0\staticwebassets\msbuild.Blazor.Logging.Microsoft.AspNetCore.StaticWebAssets.props

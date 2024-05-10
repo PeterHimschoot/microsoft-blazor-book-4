@@ -56,3 +56,4 @@ C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazo
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazor.RenderMode\obj\Debug\net8.0\Blazor.RenderMode.pdb
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazor.RenderMode\obj\Debug\net8.0\Blazor.RenderMode.genruntimeconfig.cache
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazor.RenderMode\obj\Debug\net8.0\ref\Blazor.RenderMode.dll
+C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazor.RenderMode\obj\Debug\net8.0\Blazor.RenderMode.sourcelink.json

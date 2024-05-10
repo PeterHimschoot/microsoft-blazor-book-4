@@ -1,0 +1,23 @@
+﻿@page "/"
+@using BlazorApp.CircuitDetection.Providers
+@using Microsoft.AspNetCore.Components.Server.Circuits
+
+@inject CurrentCircuitHandler CurrentCircuitHander;
+@inject LoggingCircuitHandler LoggingCircuitHandler;
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+Your circuit id = @(CurrentCircuitHander.Current?.Id ?? "None");
+
+Nr of circuits: @LoggingCircuitHandler.Count
+
+<div id="components-reconnect-modal">
+  There was a problem with the connection!
+  (Current reconnect attempt:
+  <span id="components-reconnect-current-attempt"></span> /
+  <span id="components-reconnect-max-retries"></span>)
+</div>

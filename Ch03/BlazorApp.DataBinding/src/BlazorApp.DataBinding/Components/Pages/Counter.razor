@@ -1,0 +1,23 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status"><span class="@BackgroundColor">@currentCount</span></p>
+
+<button class="btn btn-primary" 
+  disabled="@(currentCount >= 10)"
+  @onclick="IncrementCount">Click me</button>
+
+@code {
+  private int currentCount = 0;
+
+  private void IncrementCount()
+  {
+    currentCount++;
+  }
+
+  private string BackgroundColor
+    => (currentCount % 2 == 0) ? "red-background" : "yellow-background";
+}

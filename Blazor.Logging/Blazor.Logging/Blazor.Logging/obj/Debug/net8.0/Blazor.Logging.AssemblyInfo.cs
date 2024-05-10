@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Blazor.Logging")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e31a3bb699053b875cb50ba8ab80db23586f814a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Blazor.Logging")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Blazor.Logging")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

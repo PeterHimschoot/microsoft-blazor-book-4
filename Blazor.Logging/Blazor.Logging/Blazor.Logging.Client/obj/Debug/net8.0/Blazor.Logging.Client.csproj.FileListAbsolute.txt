@@ -615,6 +615,7 @@ C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logg
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging.Client\obj\Debug\net8.0\Blazor.Logging.Client.AssemblyInfo.cs
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging.Client\obj\Debug\net8.0\Blazor.Logging.Client.csproj.CoreCompileInputs.cache
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging.Client\obj\Debug\net8.0\Blazor.Logging.Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging.Client\obj\Debug\net8.0\Blazor.Logging.Client.sourcelink.json
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Authorization.wasm
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.wasm
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.Logging\Blazor.Logging\Blazor.Logging.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Forms.wasm

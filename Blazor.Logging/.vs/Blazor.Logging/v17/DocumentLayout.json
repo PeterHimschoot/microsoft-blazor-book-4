@@ -7,32 +7,16 @@
       "RelativeMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|solutionrelative:blazor.logging\\blazor.logging.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging.client\\wwwroot\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|solutionrelative:blazor.logging\\blazor.logging.client\\wwwroot\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging.client\\wwwroot\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|solutionrelative:blazor.logging\\blazor.logging.client\\wwwroot\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06828FA5-0B47-4308-AEE0-07F4A9F36246}|Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{06828FA5-0B47-4308-AEE0-07F4A9F36246}|Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj|solutionrelative:blazor.logging\\blazor.logging\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06828FA5-0B47-4308-AEE0-07F4A9F36246}|Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{06828FA5-0B47-4308-AEE0-07F4A9F36246}|Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj|solutionrelative:blazor.logging\\blazor.logging\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging.client\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|solutionrelative:blazor.logging\\blazor.logging.client\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{06828FA5-0B47-4308-AEE0-07F4A9F36246}|Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06828FA5-0B47-4308-AEE0-07F4A9F36246}|Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj|solutionrelative:blazor.logging\\blazor.logging\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06828FA5-0B47-4308-AEE0-07F4A9F36246}|Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{06828FA5-0B47-4308-AEE0-07F4A9F36246}|Blazor.Logging\\Blazor.Logging\\Blazor.Logging.csproj|solutionrelative:blazor.logging\\blazor.logging\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging.client\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|solutionrelative:blazor.logging\\blazor.logging.client\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.logging\\blazor.logging\\blazor.logging.client\\blazor.logging.client.csproj||{4C9BC7A2-907A-44AA-99EA-D1B57B1A20F8}",
+      "RelativeMoniker": "D:0:0:{ED9497C0-6CB9-49B7-9E08-789A59C7B09B}|Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj|solutionrelative:blazor.logging\\blazor.logging.client\\blazor.logging.client.csproj||{4C9BC7A2-907A-44AA-99EA-D1B57B1A20F8}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,10 +57,6 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
@@ -84,100 +64,48 @@
               "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging.Client\\Program.cs",
               "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\Program.cs",
               "RelativeToolTip": "Blazor.Logging\\Blazor.Logging.Client\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T15:00:28.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging\\appsettings.Development.json",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\appsettings.Development.json",
-              "RelativeToolTip": "Blazor.Logging\\Blazor.Logging\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-25T14:28:20.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\wwwroot\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging.Client\\wwwroot\\appsettings.Development.json",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\wwwroot\\appsettings.Development.json",
-              "RelativeToolTip": "Blazor.Logging\\Blazor.Logging.Client\\wwwroot\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-25T14:28:06.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\Components\\App.razor",
-              "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging\\Components\\App.razor",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\Components\\App.razor",
-              "RelativeToolTip": "Blazor.Logging\\Blazor.Logging\\Components\\App.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-25T14:26:19.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging.Client\\Pages\\Home.razor",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\Pages\\Home.razor",
-              "RelativeToolTip": "Blazor.Logging\\Blazor.Logging.Client\\Pages\\Home.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-25T14:25:54.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Counter.razor",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\Pages\\Counter.razor",
-              "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging.Client\\Pages\\Counter.razor",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\Pages\\Counter.razor",
-              "RelativeToolTip": "Blazor.Logging\\Blazor.Logging.Client\\Pages\\Counter.razor",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-25T14:25:07.746Z",
+              "WhenOpened": "2024-05-10T08:09:19.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\wwwroot\\appsettings.json",
-              "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging.Client\\wwwroot\\appsettings.json",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\wwwroot\\appsettings.json",
-              "RelativeToolTip": "Blazor.Logging\\Blazor.Logging.Client\\wwwroot\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-25T14:24:59.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\appsettings.json",
               "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging\\appsettings.json",
               "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\appsettings.json",
               "RelativeToolTip": "Blazor.Logging\\Blazor.Logging\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-25T14:24:52.59Z",
+              "WhenOpened": "2024-05-10T08:08:58.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\Program.cs",
+              "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging\\Program.cs",
+              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging\\Program.cs",
+              "RelativeToolTip": "Blazor.Logging\\Blazor.Logging\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T08:08:48.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Blazor.Logging.Client",
+              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj",
+              "RelativeDocumentMoniker": "Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj",
+              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.Logging\\Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj",
+              "RelativeToolTip": "Blazor.Logging\\Blazor.Logging.Client\\Blazor.Logging.Client.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-10T07:30:30.681Z",
               "EditorCaption": ""
             }
           ]

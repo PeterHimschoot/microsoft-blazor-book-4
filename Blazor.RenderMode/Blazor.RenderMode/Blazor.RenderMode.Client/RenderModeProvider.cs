@@ -9,8 +9,7 @@ public class RenderModeProvider(ActiveCircuitState activeCircuitState)
 {
   public string GetRenderMode(ComponentBase page)
   {
-    bool isBrowser = OperatingSystem.IsBrowser();
-    if (isBrowser)
+    if (OperatingSystem.IsBrowser())
     {
       return RenderModes.InteractiveWebAssembly;
     }
@@ -38,6 +37,5 @@ public class RenderModeProvider(ActiveCircuitState activeCircuitState)
 
   private bool UsesStaticRendering(Type pageType)
   => pageType.GetCustomAttribute<StreamRenderingAttribute>() is not null;
-
 
 }

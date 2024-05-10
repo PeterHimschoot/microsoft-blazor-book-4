@@ -1026,3 +1026,4 @@ C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazo
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazor.RenderMode.Client\obj\Debug\net8.0\refint\Blazor.RenderMode.Client.dll
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazor.RenderMode.Client\obj\Debug\net8.0\Blazor.RenderMode.Client.pdb
 C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazor.RenderMode.Client\obj\Debug\net8.0\ref\Blazor.RenderMode.Client.dll
+C:\Code\GitHub\microsoft-blazor-book-4\Blazor.RenderMode\Blazor.RenderMode\Blazor.RenderMode.Client\obj\Debug\net8.0\Blazor.RenderMode.Client.sourcelink.json

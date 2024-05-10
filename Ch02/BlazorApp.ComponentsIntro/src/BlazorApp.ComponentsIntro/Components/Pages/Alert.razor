@@ -7,8 +7,10 @@
 
 @code {
   [Parameter]
+  [EditorRequired]
   public bool Show { get; set; }
 
+  [EditorRequired]
   [Parameter]
   public RenderFragment ChildContent { get; set; } = default!;
 }
