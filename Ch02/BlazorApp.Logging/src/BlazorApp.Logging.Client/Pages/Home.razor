@@ -1,0 +1,29 @@
+﻿@page "/"
+@inject ILogger<Home> _logger;
+
+@rendermode InteractiveServer
+@* @rendermode InteractiveWebAssembly *@
+
+<PageTitle>Logging</PageTitle>
+
+<h1>Logging</h1>
+
+<div>Click these buttons to see some logging.</div>
+
+<button class="btn btn-info" @onclick="LogDebug">Debug</button>
+<button class="btn btn-secondary" @onclick="LogInformation">Info</button>
+<button class="btn btn-warning" @onclick="LogWarning">Warning</button>
+<button class="btn btn-danger" @onclick="LogError">Error</button>
+<button class="btn btn-dark" @onclick="LogCritical">Critical</button>
+<button class="btn btn-primary" @onclick="LogConsole">Console</button>
+
+@code {
+
+  private void LogDebug() => _logger.LogDebug("Hmmmm...");
+  private void LogInformation() => _logger.LogInformation("Hi there!");
+  private void LogWarning() => _logger.LogWarning("Some warning");
+  private void LogError() => _logger.LogError("Some error");
+  private void LogCritical() => _logger.LogCritical("Aaahhhhh!");
+  private void LogConsole() => Console.WriteLine("This works too!");
+
+}
