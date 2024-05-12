@@ -12,7 +12,12 @@ Welcome to your new app.
 
 <button @onclick="ToggleAlert" class="btn btn-success">Toggle</button>
 
+<div>@System.DateTime.Now.ToLongDateString()</div>
+
 @code {
-  public bool ShowAlert { get; set; } = true;
-  public void ToggleAlert() => ShowAlert = !ShowAlert;
+    public bool ShowAlert { get; set; } = true;
+
+    private const int Day = 24;
+
+    public void ToggleAlert() => ShowAlert = !ShowAlert;
 }

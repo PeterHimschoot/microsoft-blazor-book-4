@@ -5,3 +5,65 @@
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+
+<input @bind:get="@searchText"
+       @bind:set="ClearResult"/>
+
+<br/>
+
+@if (searchResult is not "")
+{
+  <p>Search found: @searchResult</p>
+}
+
+@* <p>
+  <input @bind="@Today" @bind:format="yyyy-MM-dd" />
+</p>
+
+@Today.ToLongDateString()
+ *@
+
+@* <DismissibleAlert @bind-Show="@ShowAlert"
+  @ref="_dismissibleAlert">
+  <strong>Blazor is soo cool!</strong>
+</DismissibleAlert>
+
+<button @onclick="ToggleAlert" class="btn btn-success">Toggle</button>
+<button @onclick="Dismiss" class="btn btn-success">Dismiss</button>
+ *@
+@* Add the Delay component *@
+@* <Delay TimeInSeconds="5" Tick="ToggleAlert" />
+ *@
+@code {
+
+  private string searchText = string.Empty;
+  private string searchResult = string.Empty;
+
+  private async Task PerformSearch()
+  {
+    await Task.Delay(TimeSpan.FromSeconds(2));
+    searchResult = $"Found result for {searchText}";
+  }
+
+  private async Task ClearResult(string value) {
+    searchText = value;
+    searchResult = string.Empty;
+    await PerformSearch();
+  }
+
+  // private DateTime Today { get; set; } = DateTime.Now;
+
+  // public bool ShowAlert { get; set; } = true;
+
+  // public void ToggleAlert() {
+  //   Console.WriteLine($"Toggle {ShowAlert}");
+  //   ShowAlert = !ShowAlert;
+  // }
+
+  // private DismissibleAlert _dismissibleAlert = default!;
+
+  // private async Task Dismiss()
+  // {
+  //   await _dismissibleAlert.Dismiss();
+  // }
+}

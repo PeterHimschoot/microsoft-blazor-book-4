@@ -7,3 +7,16 @@
   background: yellow;
   color: black;
 }
+
+.background {
+  width: 400px;
+  height: 400px;
+  background-color: yellow;
+}
+
+.foreground {
+  width: 250px;
+  height: 250px;
+  background-color: aqua;
+  margin: 50px
+}
