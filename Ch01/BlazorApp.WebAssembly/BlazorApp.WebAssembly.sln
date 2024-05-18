@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A0E5386C-4500-4A7E-8BEF-6A5AA6CF36E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.WebAssembly", "src\BlazorApp.WebAssembly\BlazorApp.WebAssembly.csproj", "{494FBC5D-6C44-4614-AE34-180BD166D4CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{494FBC5D-6C44-4614-AE34-180BD166D4CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{494FBC5D-6C44-4614-AE34-180BD166D4CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{494FBC5D-6C44-4614-AE34-180BD166D4CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{494FBC5D-6C44-4614-AE34-180BD166D4CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{494FBC5D-6C44-4614-AE34-180BD166D4CA} = {A0E5386C-4500-4A7E-8BEF-6A5AA6CF36E9}
+	EndGlobalSection
+EndGlobal
