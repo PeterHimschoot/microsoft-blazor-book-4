@@ -1,5 +1,36 @@
-﻿<h3>Menu</h3>
+﻿<h1>Our selection of pizzas</h1>
+
+@foreach (Pizza pizza in Pizzas)
+{
+  <div class="row">
+    <div class="col">
+      @pizza.Name
+    </div>
+    <div class="col text-right">
+      @($"{pizza.Price:0.00}")
+    </div>
+    <div class="col"></div>
+    <div class="col">
+      <img src="@SpicinessImage(pizza.Spiciness)"
+           alt="@pizza.Spiciness" />
+    </div>
+    <div class="col">
+      <button class="btn btn-success pl-4 pr-4"
+              @onclick=@(async () => await Selected.InvokeAsync(pizza))>
+        Add
+      </button>
+    </div>
+  </div>
+}
 
 @code {
+  [Parameter]
+  [EditorRequired]
+  public Pizza[] Pizzas { get; set; } = [];
 
+  private string SpicinessImage(Spiciness spiciness)
+  => $"images/{spiciness.ToString().ToLower()}.png";
+
+  [Parameter]
+  public EventCallback<Pizza> Selected { get; set; }
 }
