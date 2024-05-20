@@ -24,7 +24,7 @@ h1:focus {
     outline: none;
 }
 
-.valid.modified:not([type=checkbox]) {
+.valid.modified:not([type=checkbox]):not([type=radio]) {
   /*outline: 1px solid #26b050;*/
   border-left: 5px solid #42A948; /* green */
 }

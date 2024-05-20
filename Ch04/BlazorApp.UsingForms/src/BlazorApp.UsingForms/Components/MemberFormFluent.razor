@@ -1,8 +1,11 @@
-﻿<h3>Custom Validation With EditContext</h3>
+﻿@using Blazored.FluentValidation
 
-<EditForm EditContext="@editContext" FormName="member-form" OnValidSubmit="Submit">
+<h3>Fluent Validation</h3>
 
-  @* No changes inside the EditForm *@
+<EditForm FormName="member-form" OnValidSubmit="Submit" Model="@Member">
+
+  <FluentValidationValidator Validator="validator" />
+
   <div class="form-group row mb-1">
     <label class="col-sm-3 col-form-label" for="Name">Name:</label>
     <div class="col-sm-9">
@@ -83,37 +86,7 @@
   [EditorRequired]
   public required Member Member { get; set; }
 
-  private EditContext? editContext;
-  private ValidationMessageStore? messageStore;
-
-  protected override void OnInitialized()
-  {
-    editContext = new(Member); // Member has already been set
-
-    // editContext.OnFieldChanged += HandleFieldChanged;
-
-    editContext.OnValidationRequested += HandleValidationRequested;
-    messageStore = new(editContext);
-  }
-
-  // private void HandleFieldChanged(object? _, FieldChangedEventArgs e)
-  // {
-  //   editContext?.Validate();
-  // }
-
-  private void HandleValidationRequested(object? sender, 
-    ValidationRequestedEventArgs e)
-  {
-    messageStore?.Clear();
-    if (Member.Name is not string { Length: > 0 })
-    {
-      messageStore?.Add(() => Member.Name, "Name is mandatory");
-    }
-    else if (Member.Name is not string  { Length: < 100 })
-    {
-      messageStore?.Add(() => Member.Name, "Name cannot be longer that 100 characters");
-    }
-  }
+  private FluentMemberValidator validator = new();
 
   public void Submit()
   {

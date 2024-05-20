@@ -25,11 +25,11 @@ public partial class MemberCustomValidator : CustomValidator<Member>
 
   private void ValidateName(Member member, ValidationMessageStore store)
   {
-    if (member.Name is not { Length: > 0 })
+    if (member.Name is not string { Length: > 0 })
     {
       store?.Add(() => member.Name, "Name is mandatory");
     }
-    else if (member.Name is not { Length: < 100 })
+    else if (member.Name is not string { Length: < 100 })
     {
       store?.Add(() => member.Name, "Name cannot be longer that 100 characters");
     }
@@ -37,7 +37,7 @@ public partial class MemberCustomValidator : CustomValidator<Member>
 
   private void ValidateEmail(Member member, ValidationMessageStore store)
   {
-    if (member.Email is not { Length: > 0 })
+    if (member.Email is not string { Length: > 0 })
     {
       store?.Add(() => member.Email, "Email is mandatory");
     }
