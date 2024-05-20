@@ -10,4 +10,8 @@
     <ProjectReference Include="..\BlazorApp.PizzaPlace.Shared\BlazorApp.PizzaPlace.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
+  </ItemGroup>
+
 </Project>

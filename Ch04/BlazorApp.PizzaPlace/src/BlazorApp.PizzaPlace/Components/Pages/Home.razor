@@ -6,6 +6,11 @@
 
 <Basket @bind-State="@State"/>
 
+<CustomerEntry Title="Please enter your details below"
+   @bind-Customer="@State.Customer"
+   SubmitTitle="Place Order"
+   SubmitClicked="SubmitClicked"/>
+
 <p>@State.ToJson()</p>
 
 @code {
@@ -34,5 +39,10 @@
   private void AddPizzaToBasket(Pizza pizza)
   {
     State.Basket.Add(pizza.Id);
+  }
+
+  private void SubmitClicked()
+  {
+    Console.WriteLine("Order has been placed");
   }
 }
