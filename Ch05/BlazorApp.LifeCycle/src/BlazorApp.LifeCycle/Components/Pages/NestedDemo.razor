@@ -1,0 +1,56 @@
+﻿@implements IAsyncDisposable
+
+<div>Hi, I live inside another component</div>
+
+<div>
+  <span>@Text - @Number</span>
+</div>
+
+@code {
+
+  [Parameter]
+  [EditorRequired]
+  public required string Text { get; set; }
+
+  [Parameter]
+  [EditorRequired]
+  public required string Number { get; set; }
+
+
+  public NestedDemo()
+  {
+    Console.WriteLine("Inside Nested Contructor");
+  }
+
+  public override Task SetParametersAsync(ParameterView parameters)
+  {
+    Console.WriteLine("Inside Nested SetParametersAsync");
+    foreach( ParameterValue para in parameters)
+    {
+      Console.WriteLine($"{para.Name} = {para.Value}");
+    }
+    return base.SetParametersAsync(parameters);
+  }
+
+  protected override async Task OnParametersSetAsync()
+  {
+    Console.WriteLine($"Begin Nested OnParametersSetAsync");
+    await Task.Delay(TimeSpan.FromSeconds(5));
+    Console.WriteLine($"End Nested OnParametersSetAsync");
+  }
+
+
+  protected override Task OnAfterRenderAsync(bool firstRender)
+  {
+    Console.WriteLine($"Nested Demo Rendered - FirstRender = {firstRender}");
+    return Task.CompletedTask;
+  }
+
+  public async ValueTask DisposeAsync()
+  {
+    Console.WriteLine("Begin Nested Dispose");
+    await Task.Delay(TimeSpan.FromSeconds(1));
+    Console.WriteLine("End Nested Dispose");
+  }
+
+}

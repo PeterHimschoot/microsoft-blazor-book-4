@@ -1,0 +1,70 @@
+﻿@page "/life-cycle"
+@implements IDisposable
+
+<h3>Life Cycle Demo</h3>
+
+@* <NestedDemo Text="@text" Number="@number.ToString()"/> *@
+
+@* <button class="btn btn-success" @onclick="ClickAsync">Click</button> *@
+
+@code {
+
+  // string text = "";
+  // int number = 0;
+
+  public LifeCycleDemo()
+  {
+    Console.Clear();
+    Console.WriteLine("Inside LifeCycle constructor");
+  }
+
+  public override Task SetParametersAsync(ParameterView parameters)
+  {
+    Console.WriteLine("Inside LifeCycle SetParametersAsync");
+    return base.SetParametersAsync(parameters);
+  }
+
+  protected override async Task OnParametersSetAsync()
+  {
+    Console.WriteLine($"Inside LifeCycle OnParametersSetAsync");
+    await Task.CompletedTask;
+    // Console.WriteLine($"End LifeCycle OnParametersSetAsync");
+  }
+
+  protected override async Task OnInitializedAsync()
+  {
+    Console.WriteLine($"Begin LifeCycle OnParametersSetAsync");
+    // text = "First OnInitializedAsync";
+    // number = 10;
+    // await Task.Delay(TimeSpan.FromSeconds(5));
+    // text = "Next OnInitializedAsync";
+    // number = 20;
+    // StateHasChanged();
+    // await Task.Delay(TimeSpan.FromSeconds(5));
+    // text = "Last OnInitializedAsync";
+    // number = 30;
+    await Task.CompletedTask;
+  }
+
+  protected override Task OnAfterRenderAsync(bool firstRender)
+  {
+    Console.WriteLine($"LifeCycle Demo Rendered - FirstRender = {firstRender}");
+    return Task.CompletedTask;
+  }
+
+  public void Dispose()
+  {
+    Console.WriteLine("Inside LifeCycle Dispose");
+  }
+
+  // public async Task ClickAsync()
+  // {
+  //   text = "Begin ClickAsync";
+  //   await Task.Delay(TimeSpan.FromSeconds(5));
+  //   text = "Middle ClickAsync";
+  //   StateHasChanged();
+  //   await Task.Delay(TimeSpan.FromSeconds(5));
+  //   text = "End ClickAsync";
+  // }
+
+}
