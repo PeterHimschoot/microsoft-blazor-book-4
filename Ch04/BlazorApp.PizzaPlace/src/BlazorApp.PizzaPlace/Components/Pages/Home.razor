@@ -1,0 +1,38 @@
+﻿@page "/"
+
+<PageTitle>The PizzaPlace</PageTitle>
+
+<Menu Pizzas="@State.Pizzas" Selected="AddPizzaToBasket" />
+
+<Basket @bind-State="@State"/>
+
+<p>@State.ToJson()</p>
+
+@code {
+
+  private State State { get; set; } = new()
+    {
+      Pizzas = [
+        new Pizza { 
+          Id = 1, 
+          Name = "Pepperoni", 
+          Price = 8.99M, 
+          Spiciness = Spiciness.Spicy },
+        new Pizza { 
+          Id = 2, 
+          Name = "Margherita", 
+          Price = 7.99M, 
+          Spiciness = Spiciness.None },
+        new Pizza { 
+          Id = 3, 
+          Name = "Diavola", 
+          Price = 9.99M, 
+          Spiciness = Spiciness.Hot }
+      ]
+    };
+
+  private void AddPizzaToBasket(Pizza pizza)
+  {
+    State.Basket.Add(pizza.Id);
+  }
+}

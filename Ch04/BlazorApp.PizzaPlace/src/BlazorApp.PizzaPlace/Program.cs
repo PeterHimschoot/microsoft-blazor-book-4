@@ -1,4 +1,4 @@
-using BlazorApp.DataBinding.Components;
+using BlazorApp.PizzaPlace.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

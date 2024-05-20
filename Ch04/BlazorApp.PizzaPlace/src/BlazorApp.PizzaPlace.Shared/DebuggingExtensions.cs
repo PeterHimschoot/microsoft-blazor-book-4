@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace BlazorApp.DataBinding;
+namespace BlazorApp.PizzaPlace.Shared;
 
 public static class DebuggingExtensions
 {

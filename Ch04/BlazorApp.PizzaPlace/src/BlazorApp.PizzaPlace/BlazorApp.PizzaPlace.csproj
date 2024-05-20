@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorApp.PizzaPlace.Shared\BlazorApp.PizzaPlace.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
