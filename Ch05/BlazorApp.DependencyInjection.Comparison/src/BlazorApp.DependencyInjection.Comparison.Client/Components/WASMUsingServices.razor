@@ -1,0 +1,26 @@
+﻿@rendermode InteractiveWebAssembly
+
+@implements IDisposable
+
+@inject ISingletonService singletonService
+@inject ITransientService transientService
+@inject IScopedService scopedService
+
+<h3>Interactive WebAssembly</h3>
+
+<div>
+  <h1>Singleton</h1>
+  Guid: @singletonService.Guid
+  <h1>Transient</h1>
+  Guid: @transientService.Guid
+  <h1>Scoped</h1>
+  Guid: @scopedService.Guid
+</div>
+
+@code {
+
+  public void Dispose()
+  {
+    (transientService as IDisposable)?.Dispose();
+  }
+}

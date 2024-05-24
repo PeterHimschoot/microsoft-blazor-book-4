@@ -1,0 +1,26 @@
+﻿@rendermode InteractiveWebAssembly
+
+@inherits OwningComponentBase
+
+@inject ISingletonService singletonService
+@inject ITransientService transientService
+@inject IScopedService scopedService
+
+<h3>OwningComponentBase</h3>
+
+<div>
+  <h1>Scoped</h1>
+  Guid: @scopedService.Guid
+  <h1>Owning</h1>
+  Guid: @someService.Guid
+</div>
+
+@code {
+  private IScopedService someService = default!;
+
+  protected override void OnInitialized()
+  {
+    base.OnInitialized();
+    someService = ScopedServices.GetRequiredService<IScopedService>();
+  }
+}

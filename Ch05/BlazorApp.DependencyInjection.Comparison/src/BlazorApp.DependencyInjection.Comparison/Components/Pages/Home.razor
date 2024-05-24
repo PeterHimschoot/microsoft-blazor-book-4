@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Blazor Dependency Injection</h1>
+
+<div class="d-flex">
+  <div class="flex-column m-1 p-2 border border-primary rounded">
+    <SRUsingServices />
+  </div>
+  <div class="flex-column m-1 p-2 border border-warning rounded">
+    <WASMUsingServices />
+  </div>
+</div>
+<div class="d-flex">
+  <div class="flex-column m-1 p-2 border border-success rounded">
+    <WASMUsingOwnedScopedServices />
+  </div>
+  <div class="flex-column m-1 p-2 border border-danger rounded">
+    <WASMUsingOwnedScopedServices2 />
+  </div>
+</div>
