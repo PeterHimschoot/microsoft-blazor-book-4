@@ -8,4 +8,8 @@ _ = builder.Services
            .AddTransient<ITransientService, WASMTransientService>()
            .AddScoped<IScopedService, WASMScopedService>();
 
+_ = builder.Services
+           .AddKeyedSingleton<IGreeter, FrenchGreeter>(serviceKey: "French")
+           .AddKeyedSingleton<IGreeter, EnglishGreeter>(serviceKey: "English");
+
 await builder.Build().RunAsync();

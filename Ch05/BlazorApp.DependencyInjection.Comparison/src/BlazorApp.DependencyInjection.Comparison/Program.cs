@@ -15,6 +15,9 @@ _ = builder.Services
            .AddTransient<ITransientService, SRTransientService>()
            .AddScoped<IScopedService, SRScopedService>();
 
+_ = builder.Services
+           .AddKeyedSingleton<IGreeter, FrenchGreeter>(serviceKey: "French")
+           .AddKeyedSingleton<IGreeter, EnglishGreeter>(serviceKey: "English");
 
 var app = builder.Build();
 

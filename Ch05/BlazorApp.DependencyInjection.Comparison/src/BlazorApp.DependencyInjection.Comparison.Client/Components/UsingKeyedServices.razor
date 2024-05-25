@@ -1,0 +1,16 @@
+﻿@rendermode InteractiveWebAssembly
+
+<h3>Using Keyed Services</h3>
+
+<div>@FrenchGreeter.Message()</div>
+
+<div>@EnglishGreeter.Message()</div>
+
+@code {
+
+  [Inject(Key = "French")]
+  public required IGreeter FrenchGreeter { get; set; }
+
+  [Inject(Key = "English")]
+  public required IGreeter EnglishGreeter { get; set; }
+}
