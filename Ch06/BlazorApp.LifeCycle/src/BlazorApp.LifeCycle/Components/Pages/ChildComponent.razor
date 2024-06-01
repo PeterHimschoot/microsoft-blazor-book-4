@@ -1,0 +1,13 @@
+﻿<h3>Child Component</h3>
+<p>Counter: @Counter</p>
+
+@code {
+  [Parameter]
+  public int Counter { get; set; }
+
+  protected override async Task OnParametersSetAsync()
+  {
+    await base.OnParametersSetAsync();
+    Console.WriteLine($"Counter updated: {Counter}");
+  }
+}

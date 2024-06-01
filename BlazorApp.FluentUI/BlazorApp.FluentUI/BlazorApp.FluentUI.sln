@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{17F772D8-ACF6-4B20-94D9-230E545B4EB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.FluentUI", "src\BlazorApp.FluentUI\BlazorApp.FluentUI.csproj", "{2EDF26B6-72D4-4567-B0F9-A239CFC2D4EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EDF26B6-72D4-4567-B0F9-A239CFC2D4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDF26B6-72D4-4567-B0F9-A239CFC2D4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDF26B6-72D4-4567-B0F9-A239CFC2D4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDF26B6-72D4-4567-B0F9-A239CFC2D4EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2EDF26B6-72D4-4567-B0F9-A239CFC2D4EC} = {17F772D8-ACF6-4B20-94D9-230E545B4EB3}
+	EndGlobalSection
+EndGlobal

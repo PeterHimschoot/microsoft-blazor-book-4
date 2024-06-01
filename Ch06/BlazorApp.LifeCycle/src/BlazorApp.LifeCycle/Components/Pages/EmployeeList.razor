@@ -1,0 +1,31 @@
+﻿@using BlazorApp.LifeCycle.Services
+
+<h3>EmployeeList</h3>
+
+@code {
+  [Parameter]
+  [EditorRequired]
+  public int DepartmentId { get; set; }
+
+  [Inject]
+  public required IDepartmentService DepartmentService { get; set; }
+
+  private IEnumerable<string>? _employees = null;
+
+  protected override void OnParametersSet() 
+  {
+    _employees = DepartmentService.GetEmployees(DepartmentId);
+  }
+
+  protected override async Task OnParametersSetAsync()
+  {
+    _employees = await DepartmentService.GetEmployeesAsync(DepartmentId);
+  }
+
+  private DateTime _createdDate;
+
+  protected override void OnInitialized()
+  {
+    _createdDate = DateTime.Now;
+  }
+}

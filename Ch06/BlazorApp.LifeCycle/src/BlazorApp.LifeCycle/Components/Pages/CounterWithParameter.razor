@@ -1,0 +1,19 @@
+﻿<p role="status">Current count: @CurrentCount</p>
+
+@code {
+  [Parameter]
+  [EditorRequired]
+  public required int CurrentCount { get; set; }
+
+  public override Task SetParametersAsync(ParameterView parameters)
+  {
+    if (parameters.TryGetValue(nameof(CurrentCount), out int cc))
+    {
+      if (cc % 2 == 0)
+      {
+        CurrentCount = cc;
+      }
+    }
+    return base.SetParametersAsync(ParameterView.Empty);
+  }
+}

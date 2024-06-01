@@ -99,6 +99,14 @@
       formValid = editContext.Validate();
       StateHasChanged();
     };
+
+    editContext.OnValidationRequested += (_, _) =>
+    {
+      formValid = validator.Validate(Member).IsValid;
+      StateHasChanged();
+    };
+
+    formValid = validator.Validate(Member).IsValid;
   }
 
   public void Submit()

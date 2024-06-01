@@ -1,0 +1,20 @@
+﻿@page "/parent"
+
+<h3>Parent Component</h3>
+<button @onclick="() => counter++">Increment Counter</button>
+
+<ChildComponent Counter="counter" />
+
+@code {
+  private int counter = 0;
+
+  protected override void OnInitialized()
+  {
+    // Simulate a state change after the initial render
+    Task.Delay(1000).ContinueWith(_ =>
+    {
+      counter++;
+      InvokeAsync(StateHasChanged);
+    });
+  }
+}

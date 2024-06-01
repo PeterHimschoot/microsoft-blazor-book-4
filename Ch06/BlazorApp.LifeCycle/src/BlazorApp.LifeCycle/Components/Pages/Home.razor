@@ -5,3 +5,16 @@
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+
+<CounterWithParameter CurrentCount="@counter"/>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+  private int counter = 0;
+
+  public void IncrementCount()
+  {
+    counter += 1;
+  }
+}
