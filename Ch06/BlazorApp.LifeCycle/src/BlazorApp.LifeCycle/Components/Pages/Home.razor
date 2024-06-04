@@ -6,15 +6,23 @@
 
 Welcome to your new app.
 
-<CounterWithParameter CurrentCount="@counter"/>
+@* <CounterWithParameter CurrentCount="@counter"/>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+ *@
+<CounterWithShouldRender Shared="@renderCount" />
+<CounterWithShouldRender Shared="@renderCount" />
+
+<button class="btn btn-primary" @onclick="()=>renderCount++">@renderCount</button>
+
+
 
 @code {
   private int counter = 0;
+  private int renderCount = 0;
 
-  public void IncrementCount()
-  {
-    counter += 1;
-  }
+  // public void IncrementCount()
+  // {
+  //   counter += 1;
+  // }
 }

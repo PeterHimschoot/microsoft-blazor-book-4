@@ -1,0 +1,35 @@
+﻿<div>
+  <h3>GrandMother</h3>
+  <span role="status">Counter: @data.Count</span>
+
+  <CascadingValue Value="@someCounter" Name="Jefke" IsFixed="true">
+    <CascadingValue Value="@this.data" IsFixed="true">
+      @ChildContent
+    </CascadingValue>
+  </CascadingValue>
+
+  <span>@someCounter</span>
+
+  <button @onclick="Increment" class="btn btn-success">Inc</button>
+
+</div>
+
+@code {
+  public CounterData data = new CounterData { Count = 10 };
+
+  public int someCounter = 5;
+
+  private void Increment()
+  {
+    someCounter += 1;
+  }
+
+  protected override void OnInitialized()
+  {
+    this.data.CountChanged += (newCount) =>
+      this.StateHasChanged();
+  }
+
+  [Parameter]
+  public RenderFragment ChildContent { get; set; } = default!;
+}

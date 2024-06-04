@@ -1,0 +1,11 @@
+﻿@page "/root-level"
+
+<h3>Root Level Cascading Value</h3>
+
+<div>User Name : @UserInfo.UserName</div>
+
+@code {
+
+  [CascadingParameter]
+  public required UserInfo UserInfo { get; set; }
+}

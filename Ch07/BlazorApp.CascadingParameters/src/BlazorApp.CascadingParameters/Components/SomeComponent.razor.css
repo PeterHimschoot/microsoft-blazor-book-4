@@ -1,0 +1,11 @@
+﻿div {
+  border: 3px dashed red;
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+span {
+  display: block;
+  margin-bottom: 0.8em;
+}

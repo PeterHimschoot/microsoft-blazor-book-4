@@ -7,7 +7,7 @@
 
   protected override async Task OnParametersSetAsync()
   {
+    Console.WriteLine($"OnParametersSetAsync - Counter updated: {Counter}");
     await base.OnParametersSetAsync();
-    Console.WriteLine($"Counter updated: {Counter}");
   }
 }

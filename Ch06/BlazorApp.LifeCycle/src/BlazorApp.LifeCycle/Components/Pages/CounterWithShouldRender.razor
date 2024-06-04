@@ -1,0 +1,43 @@
+﻿<h1>Counter</h1>
+
+<p role="status">Current count: @CurrentCount</p>
+<p role="status">Rendered: @renderCount</p>
+<p role="status">Shared: @Shared</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+
+  [Parameter]
+  public int Shared { get; set; }
+
+  private int prevCount;
+  private int currentCount;
+  private int renderCount;
+
+  protected override bool ShouldRender()
+  {
+    // This component should only render when currenCount is changed
+    bool shouldRender = prevCount != currentCount;
+    prevCount = currentCount;
+    return shouldRender;
+  }
+
+  public int CurrentCount
+  {
+    get
+    {
+      renderCount += 1;
+      return currentCount;
+    }
+    set
+    {
+      currentCount = value;
+    }
+  }
+
+  private void IncrementCount()
+  {
+    currentCount++;
+  }
+}

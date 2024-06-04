@@ -1,12 +1,12 @@
 ﻿@page "/life-cycle"
 @implements IDisposable
-@implements IAsyncDisposable
+@* @implements IAsyncDisposable *@
 
 <h3>Life Cycle Demo</h3>
 
 @text - @number
 
-@* <NestedDemo Text="@text" Number="@number.ToString()"/>*@
+<NestedDemo Text="@text" Number="@number.ToString()"/>
  
  <button class="btn btn-success" @onclick="ClickAsync">Click</button>
 
@@ -19,14 +19,15 @@
   {
     Console.WriteLine("-----------------------------");
     Console.WriteLine("Inside LifeCycle constructor");
+    text = "Set by constructor";
   }
 
   public override Task SetParametersAsync(ParameterView parameters)
   {
     Console.WriteLine("Inside LifeCycle SetParametersAsync");
-    // return base.SetParametersAsync(parameters);
+    return base.SetParametersAsync(parameters);
 
-    return base.SetParametersAsync(ParameterView.Empty);
+    // return base.SetParametersAsync(ParameterView.Empty);
   }
 
   protected override async Task OnParametersSetAsync()
@@ -39,15 +40,15 @@
   protected override async Task OnInitializedAsync()
   {
     Console.WriteLine($"Begin LifeCycle OnInitializedAsync");
-    text = "First OnInitializedAsync";
-    number = 10;
-    await Task.Delay(TimeSpan.FromSeconds(1));
-    text = "Next OnInitializedAsync";
-    number = 20;
-    StateHasChanged();
-    await Task.Delay(TimeSpan.FromSeconds(1));
-    text = "Last OnInitializedAsync";
-    number = 30;
+    // text = "First OnInitializedAsync";
+    // number = 10;
+    // await Task.Delay(TimeSpan.FromSeconds(1));
+    // text = "Next OnInitializedAsync";
+    // number = 20;
+    // StateHasChanged();
+    // await Task.Delay(TimeSpan.FromSeconds(1));
+    // text = "Last OnInitializedAsync";
+    // number = 30;
     // await Task.CompletedTask;
   }
 
@@ -62,19 +63,22 @@
     Console.WriteLine("Inside LifeCycle Dispose");
   }
 
-  public async ValueTask DisposeAsync()
-  {
-    Console.WriteLine("Inside LifeCycle DisposeAsync");
-    await ValueTask.CompletedTask;
-  }
+  // public async ValueTask DisposeAsync()
+  // {
+  //   Console.WriteLine("Inside LifeCycle DisposeAsync");
+  //   await ValueTask.CompletedTask;
+  // }
 
   public async Task ClickAsync()
   {
+    Console.WriteLine("**************************");
+
+    number += 1;
     text = "Begin ClickAsync";
     await Task.Delay(TimeSpan.FromSeconds(5));
-    text = "Middle ClickAsync";
-    StateHasChanged();
-    await Task.Delay(TimeSpan.FromSeconds(5));
+    // text = "Middle ClickAsync";
+    // StateHasChanged();
+    // await Task.Delay(TimeSpan.FromSeconds(5));
     text = "End ClickAsync";
   }
 

@@ -1,0 +1,14 @@
+﻿
+<div>
+  @ChildContent
+</div>
+
+<span>@SomeCounter</span>
+
+@code {
+  [Parameter]
+  public RenderFragment ChildContent { get; set; } = default!;
+
+  [CascadingParameter(Name ="Jefke")]
+  public int SomeCounter { get; set; }
+}
