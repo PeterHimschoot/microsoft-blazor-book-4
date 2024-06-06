@@ -1,0 +1,10 @@
+﻿p.errorContent {
+  color: white;
+  display: table-cell;
+}
+
+td.errorContent {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: darkgray;
+}

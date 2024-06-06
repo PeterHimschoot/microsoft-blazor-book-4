@@ -1,0 +1,55 @@
+﻿@using BlazorApp.Components.Virtualization.Data
+@using System.Diagnostics
+@using BlazorApp.Components.Virtualization.Services
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Guid</th>
+      <th>Min</th>
+      <th>Avg</th>
+      <th>Max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <Virtualize ItemsProvider="@LoadMeasurements" Context="measurement" ItemSize="41">
+      <ItemContent>
+        <tr>
+          <td>@measurement.Row</td>
+          <td>@measurement.Guid.ToString()</td>
+          <td>@measurement.Min</td>
+          <td>@measurement.Avg</td>
+          <td>@measurement.Max</td>
+        </tr>
+      </ItemContent>
+      <Placeholder>
+        <tr><td colspan="4">Loading...</td></tr>
+      </Placeholder>
+    </Virtualize>
+  </tbody>
+</table>
+
+@code {
+  private Stopwatch timer = new Stopwatch();
+  MeasurementsService measurementService = new MeasurementsService();
+
+  private async ValueTask<ItemsProviderResult<Measurement>> LoadMeasurements(ItemsProviderRequest request)
+  {
+    Console.WriteLine($"{request.StartIndex}-{request.Count}");
+    var (measurements, totalItemCount) = await measurementService.GetMeasurementsPage
+      (request.StartIndex, request.Count, request.CancellationToken);
+    return new ItemsProviderResult<Measurement>(measurements, totalItemCount);
+  }
+
+  protected override async Task OnInitializedAsync()
+  {
+    timer.Start();
+  }
+
+  protected override void OnAfterRender(bool firstRender)
+  {
+    timer.Stop();
+    Console.WriteLine($"Full rendering took {timer.ElapsedMilliseconds} ms.");
+  }
+}

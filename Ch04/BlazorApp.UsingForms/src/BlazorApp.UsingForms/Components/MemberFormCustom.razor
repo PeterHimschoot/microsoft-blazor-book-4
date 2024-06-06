@@ -15,7 +15,7 @@
   <div class="form-group row mb-1">
     <label class="col-sm-3 col-form-label" for="Email">Email:</label>
     <div class="col-sm-9">
-      <InputText type="email" class="form-control" novalidate @bind-Value="Member.Email" />
+      <InputText type="email" class="form-control" formnovalidate @bind-Value="Member.Email" />
       <ValidationMessage For="@(() => Member.Email)" />
     </div>
   </div>

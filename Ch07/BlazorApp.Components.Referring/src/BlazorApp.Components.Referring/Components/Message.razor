@@ -1,0 +1,27 @@
+﻿@if (show)
+{
+  <div class="alert alert-primary" role="alert">
+    @Text
+  </div>
+}
+
+@code {
+
+  private bool show = false;
+
+  [Parameter]
+  [EditorRequired]
+  public string Text { get; set; } = string.Empty;
+
+  public void Show()
+  {
+    show = true;
+    StateHasChanged();
+  }
+
+  public void Hide()
+  {
+    show = false;
+    StateHasChanged();
+  }
+}

@@ -7,21 +7,43 @@
   <tbody>
     @foreach (var item in Items)
     {
-      <tr>@Row(item)</tr>
+      <ErrorBoundary>
+        <ChildContent>
+          <tr>@Row(item)</tr>
+        </ChildContent>
+        <ErrorContent>
+          <tr>
+            <td class="errorContent">
+              <p class="errorContent">🌨️ Too cold. Stay inside!</p>
+            </td>
+            <td class="errorContent"></td>
+            <td class="errorContent"></td>
+            <td class="errorContent"></td>
+          </tr>
+        </ErrorContent>
+      </ErrorBoundary>
     }
   </tbody>
-  <tfoot>
-    <tr>@Footer</tr>
-  </tfoot>
+  @if (Footer is not null)
+  {
+    <tfoot>
+      <tr>@Footer</tr>
+    </tfoot>
+  }
 </table>
 
 @code {
   [Parameter]
-  public RenderFragment Header { get; set; } = default!;
+  [EditorRequired]
+  public required RenderFragment Header { get; set; }
+
   [Parameter]
-  public RenderFragment<TItem> Row { get; set; } = default!;
+  [EditorRequired]
+  public required RenderFragment<TItem> Row { get; set; }
+
   [Parameter]
-  public RenderFragment Footer { get; set; } = default!;
+  public RenderFragment? Footer { get; set; }
+
   [Parameter]
   public IReadOnlyList<TItem> Items { get; set; } = default!;
 }

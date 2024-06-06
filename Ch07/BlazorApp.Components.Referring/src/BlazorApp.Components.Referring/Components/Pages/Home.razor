@@ -1,0 +1,16 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<Message Text="Now you see me..." @ref="message" />
+
+<button class="btn btn-success" @onclick="ShowMessage">Show</button>
+<button class="btn btn-danger" @onclick="HideMessage">Hide</button>
+
+@code {
+
+  private Message message = default!;
+
+  private void ShowMessage() => message.Show();
+  private void HideMessage() => message.Hide();
+}

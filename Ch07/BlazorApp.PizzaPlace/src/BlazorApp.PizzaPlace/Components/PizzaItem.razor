@@ -1,0 +1,36 @@
+﻿<div class="row">
+  <div class="col">
+    @Pizza.Name
+  </div>
+  <div class="col text-right">
+    @($"{Pizza.Price:0.00}")
+  </div>
+  <div class="col"></div>
+  <div class="col">
+    <img src="@SpicinessImage(Pizza.Spiciness)"
+         alt="@Pizza.Spiciness" />
+  </div>
+  <div class="col">
+    <button class="btn btn-success pl-4 pr-4"
+            @onclick=@(async () => await ButtonAction.InvokeAsync(Pizza))>
+      @ButtonText
+    </button>
+  </div>
+</div>
+
+@code {
+
+  [Parameter]
+  [EditorRequired]
+  public required Pizza Pizza { get; set; }
+
+  [Parameter]
+  [EditorRequired]
+  public required string ButtonText { get; set; }
+
+  [Parameter]
+  public EventCallback<Pizza> ButtonAction { get; set; }
+
+  private string SpicinessImage(Spiciness spiciness)
+  => $"images/{spiciness.ToString().ToLower()}.png";
+}
