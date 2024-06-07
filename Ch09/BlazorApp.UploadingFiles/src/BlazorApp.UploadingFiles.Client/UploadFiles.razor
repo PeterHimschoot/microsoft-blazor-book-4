@@ -1,0 +1,50 @@
+﻿<InputFile OnChange="@LoadFiles" multiple />
+
+@LoadingStatus()
+
+@if (loadedFiles.Any())
+{
+  <ul>
+    @foreach (var file in loadedFiles)
+    {
+      <li>
+        <ul>
+          <li>Name: @file.Name</li>
+          <li>Last modified: @file.LastModified.ToString()</li>
+          <li>Size (bytes): @file.Size</li>
+          <li>Content type: @file.ContentType</li>
+        </ul>
+      </li>
+    }
+  </ul>
+}
+
+@code
+{
+  [Inject]
+  public required IUploadService UploadService { get; set; }
+
+  private bool isLoading = false;
+  private bool loadingComplete = false;
+
+  private List<IBrowserFile> loadedFiles = [];
+
+  private RenderFragment LoadingStatus()
+  => (isLoading, loadingComplete) switch
+  {
+    (true, false) => @<div class="loading-container"><div class="loading-bar"></div><p class="loading-text">Uploading files...</p></div>,
+    (true, true) => @<div class="loading-container"><div class="loaded-bar"></div><p class="loading-text">Loading complete...</p></div>,
+    _ =>@<p></p>
+  };
+
+  private async void LoadFiles(InputFileChangeEventArgs e)
+  {
+    isLoading = true;
+    loadingComplete = false;
+    // Emulate a bit slow network
+    await Task.Delay(5000);
+    loadedFiles = await UploadService.LoadFilesAsync(e);
+    loadingComplete = true;
+    StateHasChanged();
+  }
+}

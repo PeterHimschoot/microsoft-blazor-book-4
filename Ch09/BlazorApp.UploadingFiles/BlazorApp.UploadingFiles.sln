@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{804B9603-1870-4B5E-BB22-3BA9C5B2F913}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp.UploadingFiles", "src\BlazorApp.UploadingFiles\BlazorApp.UploadingFiles.csproj", "{AA7C115E-D543-4282-8E79-36D5537BE010}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp.UploadingFiles.Client", "src\BlazorApp.UploadingFiles.Client\BlazorApp.UploadingFiles.Client.csproj", "{7F6DFFC0-651C-4F6F-BB60-F59D9E02757A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA7C115E-D543-4282-8E79-36D5537BE010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7C115E-D543-4282-8E79-36D5537BE010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7C115E-D543-4282-8E79-36D5537BE010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7C115E-D543-4282-8E79-36D5537BE010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6DFFC0-651C-4F6F-BB60-F59D9E02757A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6DFFC0-651C-4F6F-BB60-F59D9E02757A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6DFFC0-651C-4F6F-BB60-F59D9E02757A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6DFFC0-651C-4F6F-BB60-F59D9E02757A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA7C115E-D543-4282-8E79-36D5537BE010} = {804B9603-1870-4B5E-BB22-3BA9C5B2F913}
+		{7F6DFFC0-651C-4F6F-BB60-F59D9E02757A} = {804B9603-1870-4B5E-BB22-3BA9C5B2F913}
+	EndGlobalSection
+EndGlobal
