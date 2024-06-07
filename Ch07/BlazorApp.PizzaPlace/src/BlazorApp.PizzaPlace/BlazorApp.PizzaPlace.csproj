@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Components\ItemsList.razor" />
+    <Content Remove="Components\ItemList.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,15 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Components\ItemsList.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Components\ItemsList.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Components\ItemsList.razor" />
+    <None Include="Components\ItemList.razor" />
   </ItemGroup>
 
 </Project>

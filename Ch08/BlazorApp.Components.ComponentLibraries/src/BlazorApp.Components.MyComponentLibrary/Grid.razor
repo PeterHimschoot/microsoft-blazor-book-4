@@ -1,0 +1,49 @@
+﻿@typeparam TItem
+
+<table class="table">
+  <thead>
+    <tr>@Header</tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Items)
+    {
+      <ErrorBoundary>
+        <ChildContent>
+          <tr>@Row(item)</tr>
+        </ChildContent>
+        <ErrorContent>
+          <tr>
+            <td class="errorContent">
+              <p class="errorContent">🌨️ Too cold. Stay inside!</p>
+            </td>
+            <td class="errorContent"></td>
+            <td class="errorContent"></td>
+            <td class="errorContent"></td>
+          </tr>
+        </ErrorContent>
+      </ErrorBoundary>
+    }
+  </tbody>
+  @if (Footer is not null)
+  {
+    <tfoot>
+      <tr>@Footer</tr>
+    </tfoot>
+  }
+</table>
+
+@code {
+  [Parameter]
+  [EditorRequired]
+  public required RenderFragment Header { get; set; }
+
+  [Parameter]
+  [EditorRequired]
+  public required RenderFragment<TItem> Row { get; set; }
+
+  [Parameter]
+  public RenderFragment? Footer { get; set; }
+
+  [Parameter]
+  public IReadOnlyList<TItem> Items { get; set; } = default!;
+}

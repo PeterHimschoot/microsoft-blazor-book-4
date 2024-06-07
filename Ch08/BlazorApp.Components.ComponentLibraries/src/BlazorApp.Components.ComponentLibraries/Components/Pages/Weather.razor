@@ -1,0 +1,62 @@
+﻿@page "/weather"
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (forecasts == null)
+{
+  <p><em>Loading...</em></p>
+}
+else
+{
+  <Grid Items="forecasts">
+    <Header>
+    <th>Date</th>
+    <th>Temp. (C)</th>
+    <th>Temp. (F)</th>
+    <th>Summary</th>
+    </Header>
+    <Row>
+      <td>@context.Date</td>
+      <td>@context.TemperatureC</td>
+      <td>@context.TemperatureF</td>
+      <td>@context.Summary</td>
+    </Row>
+    <Footer>
+    <td colspan="4">Spring is in the air!</td>
+    </Footer>
+  </Grid>
+
+  <ListView Items="forecasts">
+    <ItemTemplate>
+      @forecastTemplate(context)
+    </ItemTemplate>
+  </ListView>
+}
+
+@code {
+
+  private RenderFragment<WeatherForecast> forecastTemplate =
+    (forecast) =>@<span>@forecast.Summary</span>;
+
+  private WeatherForecast[]? forecasts;
+
+  string[] summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
+
+  protected override async Task OnInitializedAsync()
+  {
+    // Simulate asynchronous loading to demonstrate a loading indicator
+    await Task.Delay(500);
+
+    var startDate = DateOnly.FromDateTime(DateTime.Now);
+    forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+      {
+        Date = startDate.AddDays(index),
+        TemperatureC = Random.Shared.Next(-20, 55),
+        Summary = summaries[Random.Shared.Next(summaries.Length)]
+      }).ToArray();
+  }
+}

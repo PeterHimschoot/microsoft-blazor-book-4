@@ -1,0 +1,47 @@
+﻿@page "/weather-piggywig"
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather with PiggyWig</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (forecasts is null)
+{
+  <p><em>Loading...</em></p>
+}
+else
+{
+  <div class="summaries">
+    <PWListView Items="forecasts">
+      <ListTemplate Context="innerTemplate">
+        <ol>
+          @innerTemplate
+        </ol>
+      </ListTemplate>
+      <ItemTemplate Context="forecast">
+        <li>@forecast.Summary</li>
+      </ItemTemplate>
+    </PWListView>
+  </div>
+}
+
+@code {
+  private WeatherForecast[]? forecasts;
+
+  string[] summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
+
+  protected override async Task OnInitializedAsync()
+  {
+    // Simulate asynchronous loading to demonstrate a loading indicator
+    await Task.Delay(500);
+
+    var startDate = DateOnly.FromDateTime(DateTime.Now);
+    forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+      {
+        Date = startDate.AddDays(index),
+        TemperatureC = Random.Shared.Next(-20, 55),
+        Summary = summaries[Random.Shared.Next(summaries.Length)]
+      }).ToArray();
+  }
+}

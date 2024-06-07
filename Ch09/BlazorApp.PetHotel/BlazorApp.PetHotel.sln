@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A9E6D3EA-31D8-4F88-B6C3-8F54A6131353}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp.PetHotel", "src\BlazorApp.PetHotel\BlazorApp.PetHotel.csproj", "{49F7AFCA-4103-4A08-A540-60A3050EB5E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49F7AFCA-4103-4A08-A540-60A3050EB5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F7AFCA-4103-4A08-A540-60A3050EB5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F7AFCA-4103-4A08-A540-60A3050EB5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F7AFCA-4103-4A08-A540-60A3050EB5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49F7AFCA-4103-4A08-A540-60A3050EB5E5} = {A9E6D3EA-31D8-4F88-B6C3-8F54A6131353}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C2B87B8-257F-4D92-B038-CAF459AC0DEA}
+	EndGlobalSection
+EndGlobal
