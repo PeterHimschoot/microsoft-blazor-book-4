@@ -1,0 +1,125 @@
+﻿@page "/"
+@using BlazorApp.QuickGridDemo.Entities
+@using BlazorApp.QuickGridDemo.Services
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+<PageTitle>Using QuickGrid</PageTitle>
+
+<h1>Hello colleagues!</h1>
+
+@if (employees is null)
+{
+  <div><Loading /></div>
+}
+else
+{
+  <!-- Add a simple quickgrid -->
+  @* <QuickGrid Items="@employees">
+    <PropertyColumn Property="@(p => p.Name.Title)" />
+    <PropertyColumn Property="@(p => p.Name.First)" />
+    <PropertyColumn Property="@(p => p.Name.Last)" />
+    <PropertyColumn Property="@(p => p.Dob.Date)" Format="yyyy-MM-dd" />
+  </QuickGrid> *@
+
+  <!-- Enable sorting -->
+  @* <QuickGrid Items="@employees">
+    <PropertyColumn Property="@(p => p.Name.Title)" />
+    <PropertyColumn Property="@(p => p.Name.First)"
+                    Sortable="true"
+                    InitialSortDirection="SortDirection.Ascending" />
+    <PropertyColumn Property="@(p => p.Name.Last)"
+                    Sortable="true" />
+    <PropertyColumn Property="@(p => p.Dob.Date)"
+                    Format="yyyy-MM-dd"
+                    Sortable="true" />
+  </QuickGrid> *@
+
+  <!-- Let the user decide which columns to see -->
+
+  <p>
+    Show:
+    <label><input type="checkbox" @bind="showBirthdate" /> Birth date</label>
+    <label><input type="checkbox" @bind="showPicture" /> Picture</label>
+  </p>
+
+  <!-- Add a picture column using template column -->
+  <div>
+    <QuickGrid Items="@FilteredEmployees" Pagination="@pagination">
+      <PropertyColumn Property="@(p => p.Name.Title)" />
+      <PropertyColumn Property="@(p => p.Name.First)"
+                      Sortable="true" Class="first-name"
+                      InitialSortDirection="SortDirection.Ascending">
+        <ColumnOptions>
+          <div class="search-box">
+            <input type="search" autofocus @bind="nameFilter"
+                   @bind:event="oninput" placeholder="filter..." />
+          </div>
+        </ColumnOptions>
+      </PropertyColumn>
+      <PropertyColumn Property="@(p => p.Name.Last)"
+                      Sortable="true" Class="last-name" />
+      @if (showBirthdate)
+      {
+        <PropertyColumn Property="@(p => p.Dob.Date)"
+                        Format="yyyy-MM-dd"
+                        Sortable="true">
+          <ColumnOptions>
+            <p>
+              Min: <input type="range" @bind="minAgeFilter"
+                          @bind:event="oninput" min="20" max="30" />
+              <span class="inline-block w-10">@minAgeFilter</span>
+            </p>
+            <p>
+              Max: <input type="range" @bind="maxAgeFilter"
+                          @bind:event="oninput" min="30" max="100" />
+              <span class="inline-block w-10">@maxAgeFilter</span>
+            </p>
+          </ColumnOptions>
+        </PropertyColumn>
+      }
+      @if (showPicture)
+      {
+        <TemplateColumn Title="Picture" Align="Align.Center">
+          <img class="picture" src="@context.Picture.Thumbnail" />
+        </TemplateColumn>
+      }
+    </QuickGrid>
+    <Paginator State="@pagination" />
+  </div>
+}
+
+@code {
+  [Inject]
+  public required EmployeeService EmployeeService { get; set; }
+  PaginationState pagination = new PaginationState { ItemsPerPage = 10 };
+
+  private IQueryable<Employee>? employees = null;
+  private bool showBirthdate = true;
+  private bool showPicture = true;
+  // Add this for filtering
+  private string nameFilter = string.Empty;
+  private int minAgeFilter = 20;
+  private int maxAgeFilter = 100;
+
+  protected override async Task OnInitializedAsync()
+  {
+    employees = (await EmployeeService.GetEmployees(100)).AsQueryable();
+  }
+
+  private IQueryable<Employee> FilteredEmployees
+  {
+    get
+    {
+      IQueryable<Employee> result = employees!
+        .Where(e => e.Dob.Age >= minAgeFilter
+            && e.Dob.Age <= maxAgeFilter);
+
+      if (nameFilter is { Length: > 0 })
+      {
+        result = result.Where(e => e.Name.First
+          .Contains(nameFilter, StringComparison.CurrentCultureIgnoreCase));
+      }
+      return result;
+    }
+  }
+}

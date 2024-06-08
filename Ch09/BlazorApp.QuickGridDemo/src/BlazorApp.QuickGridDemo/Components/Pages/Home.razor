@@ -1,0 +1,35 @@
+﻿@page "/"
+@using BlazorApp.QuickGridDemo.Entities
+@using BlazorApp.QuickGridDemo.Services
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+<PageTitle>Using QuickGrid</PageTitle>
+
+<h1>Hello colleagues!</h1>
+
+@if (employees is null)
+{
+  <div><Loading /></div>
+}
+else
+{
+  <!-- Add a simple quickgrid -->
+  <QuickGrid Items="@employees">
+    <PropertyColumn Property="@(p => p.Name.Title)" />
+    <PropertyColumn Property="@(p => p.Name.First)" />
+    <PropertyColumn Property="@(p => p.Name.Last)" />
+    <PropertyColumn Property="@(p => p.Dob.Date)" Format="yyyy-MM-dd" />
+  </QuickGrid>
+}
+@code {
+
+  [Inject]
+  public required EmployeeService EmployeeService { get; set; }
+
+  private IQueryable<Employee>? employees = null;
+
+  protected override async Task OnInitializedAsync()
+  {
+    employees = (await EmployeeService.GetEmployees(100)).AsQueryable();
+  }
+}

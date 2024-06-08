@@ -1,0 +1,28 @@
+﻿img.picture {
+  border: 8px solid #006bb7;
+  border-radius: 8px;
+}
+
+label{
+  gap: 0.5rem;
+  border: 1px solid #aaa;
+  padding: 0.3rem 0.75rem;
+  margin-left: 0.5rem;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0,0,0,0.04);
+  cursor: pointer;
+}
+
+::deep table {
+  min-width: 100%;
+}
+
+::deep th.first-name {
+  width: 14rem;
+}
+
+::deep th.last-name {
+  width: 20rem;
+}

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{69209D3D-5DCB-4BB7-8EC7-15E26CCEED7A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp.QuickGridDemo", "src\BlazorApp.QuickGridDemo\BlazorApp.QuickGridDemo.csproj", "{B4C7BD88-B2BD-45F6-95A3-B61D8A133014}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4C7BD88-B2BD-45F6-95A3-B61D8A133014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C7BD88-B2BD-45F6-95A3-B61D8A133014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C7BD88-B2BD-45F6-95A3-B61D8A133014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C7BD88-B2BD-45F6-95A3-B61D8A133014}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4C7BD88-B2BD-45F6-95A3-B61D8A133014} = {69209D3D-5DCB-4BB7-8EC7-15E26CCEED7A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C83E34FA-E5E0-4149-BC6F-E199C1E25458}
+	EndGlobalSection
+EndGlobal
