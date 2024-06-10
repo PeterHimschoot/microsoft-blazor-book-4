@@ -1,12 +1,11 @@
-using BlazorApp.BootstrapDemo.Components;
+using BlazorApp.UsingLayouts.Components;
+using BlazorApp.UsingLayouts.Lib.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-
-builder.Services.AddBlazorBootstrap();
 
 var app = builder.Build();
 
@@ -24,6 +23,7 @@ app.UseStaticFiles();
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+    .AddInteractiveServerRenderMode()
+    .AddAdditionalAssemblies([typeof(MemberForm).Assembly]);
 
 app.Run();
