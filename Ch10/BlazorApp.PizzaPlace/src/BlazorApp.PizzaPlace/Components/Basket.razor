@@ -1,0 +1,49 @@
+﻿@if (State.Basket.Orders.Any())
+{
+  <ItemList>
+    <Header>
+      <h1 class="">Your current order</h1>
+    </Header>
+    <Row>
+      @foreach (var (pizza, pos) in GetPizzas())
+      {
+        <PizzaItem Pizza="@pizza" ButtonText="Remove"
+                   ButtonAction="@(async () => await RemoveFromBasket(pos))" />
+      }
+    </Row>
+    <Footer>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"><hr /></div>
+        <div class="col"> </div>
+        <div class="col"> </div>
+      </div>
+
+      <div class="row">
+        <div class="col"> Total:</div>
+        <div class="col text-right font-weight-bold"> @($"{State.TotalPrice:0.00}") </div>
+        <div class="col"> </div>
+        <div class="col"> </div>
+        <div class="col"> </div>
+      </div>
+    </Footer>
+  </ItemList>
+}
+
+@code {
+  [Parameter]
+  [EditorRequired]
+  public required State State { get; set; }
+
+  [Parameter]
+  public required EventCallback<State> StateChanged { get; set; }
+
+  private IEnumerable<(Pizza? pizza, int pos)> GetPizzas()
+  => State.Basket.Orders.Select((id, pos) => (State.GetPizza(id), pos));
+
+  private async ValueTask RemoveFromBasket(int pos)
+  {
+    State.Basket.RemoveAt(pos);
+    await StateChanged.InvokeAsync(State);
+  }
+}
