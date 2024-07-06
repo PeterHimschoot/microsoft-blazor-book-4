@@ -1,0 +1,33 @@
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<div id="@elementId" style="height: 100%; width: 100%;"></div>
+
+@code {
+  string elementId = $"map-{Guid.NewGuid().ToString("D")}";
+
+  [Parameter]
+  [EditorRequired]
+  public double Zoom { get; set; } = 17.0;
+
+  [Parameter]
+  public List<Marker> Markers { get; set; } = [];
+
+  private IJSObjectReference? leaflet;
+
+  protected async override void OnAfterRender(bool firstRender)
+  {
+
+    if (leaflet is null)
+    {
+      leaflet = await JSRuntime.InvokeAsync<IJSObjectReference>
+            ("import", "./_content/Leaflet.Map/map.js");
+    }
+    if (leaflet is not null)
+    {
+      await leaflet.InvokeVoidAsync(
+          "showOrUpdate",
+          elementId, Zoom, Markers);
+    }
+  }
+}

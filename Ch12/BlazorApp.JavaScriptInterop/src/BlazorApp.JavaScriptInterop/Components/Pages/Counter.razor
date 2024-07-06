@@ -1,0 +1,72 @@
+﻿@page "/counter"
+@inject IJSRuntime jsRuntime
+
+<PageTitle>Counter with IJSRuntime</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @CurrentCount</p>
+
+<!-- Add this div and input element -->
+<div>
+  <input @ref="inputElement" @bind="@CurrentCount" />
+</div>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+  private int currentCount = 0;
+
+  // Add this ElementReference
+  private ElementReference? inputElement;
+
+  public int CurrentCount
+  {
+    get => currentCount;
+    set
+    {
+      if (currentCount != value)
+      {
+        currentCount = value;
+        jsRuntime.InvokeVoidAsync("blazorLocalStorage.set", nameof(CurrentCount), currentCount);
+      }
+    }
+  }
+
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (firstRender)
+    {
+      await UpdateCounter();
+
+      if (inputElement is not null)
+      {
+        await jsRuntime.InvokeVoidAsync("blazorFocus.set", inputElement);
+      }
+
+      DotNetObjectReference<Counter> objRef = DotNetObjectReference.Create(this);
+      await jsRuntime.InvokeVoidAsync("blazorLocalStorage.watch", objRef);
+    }
+  }
+
+  [JSInvokable]
+  public async Task UpdateCounter()
+  {
+    try
+    {
+      currentCount = await jsRuntime.InvokeAsync<int>("blazorLocalStorage.get", nameof(CurrentCount));
+      StateHasChanged();
+    }
+    catch { }
+  }
+
+  // protected override async Task OnInitializedAsync()
+  // {
+  //   currentCount = await jsRuntime.InvokeAsync<int>("blazorLocalStorage.get", nameof(CurrentCount));
+  // }
+
+  private void IncrementCount()
+  {
+    CurrentCount++;
+  }
+}

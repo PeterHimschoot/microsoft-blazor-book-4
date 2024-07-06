@@ -1,0 +1,29 @@
+﻿<ItemList>
+  <Header>
+    <h1>Our selection of pizzas</h1>
+  </Header>
+  <Row>
+    @foreach (Pizza pizza in Pizzas)
+    {
+      <PizzaItem Pizza="@pizza" 
+        ButtonText="Add" 
+        ButtonAction="@Selected"
+        ShowPizzaInformation="@ShowPizzaInformation" />
+    }
+  </Row>
+</ItemList>
+
+@code {
+  [Parameter]
+  [EditorRequired]
+  public Pizza[] Pizzas { get; set; } = [];
+
+  private string SpicinessImage(Spiciness spiciness)
+  => $"images/{spiciness.ToString().ToLower()}.png";
+
+  [Parameter]
+  public EventCallback<Pizza> Selected { get; set; }
+
+  [Parameter]
+  public Action<Pizza>? ShowPizzaInformation { get; set; }
+}

@@ -1,0 +1,62 @@
+﻿@page "/counter-service"
+@using BlazorApp.JavaScriptInterop.Services
+@using Microsoft.AspNetCore.Components
+
+@inject ILocalStorage LocalStorage
+
+<PageTitle>Counter with Service</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @CurrentCount</p>
+
+<div>
+  <input @ref="inputElement" @bind="@CurrentCount" />
+</div>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+  private int currentCount = 0;
+
+  private ElementReference inputElement;
+
+  public int CurrentCount
+  {
+    get => currentCount;
+    set
+    {
+      if (currentCount != value)
+      {
+        currentCount = value;
+        LocalStorage.SetProperty(nameof(CurrentCount), currentCount);
+      }
+    }
+  }
+
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (firstRender)
+    {
+      await UpdateCounter();
+      await LocalStorage.WatchAsync(this);
+      await inputElement!.FocusAsync(preventScroll:false);
+    }
+  }
+
+  [JSInvokable]
+  public async Task UpdateCounter()
+  {
+    try
+    {
+      currentCount = await LocalStorage.GetProperty<int>(nameof(CurrentCount));
+      StateHasChanged();
+    }
+    catch { }
+  }
+
+  private void IncrementCount()
+  {
+    CurrentCount++;
+  }
+}
