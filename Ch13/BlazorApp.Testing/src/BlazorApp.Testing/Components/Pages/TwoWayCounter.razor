@@ -1,42 +1,17 @@
 ﻿<h1>Two Way Counter</h1>
-<p>Current count: @CurrentCount</p>
+<p role="status">Current count: @CurrentCount</p>
 <button class="btn btn-primary"
         @onclick="IncrementCount">
   Click me
 </button>
 
 @code {
-  // private int currentCount = 0;
 
   [Parameter]
   public int CurrentCount { get; set; }
-  // {
-  //   get => currentCount;
-  //   set
-  //   {
-  //     if (value != currentCount)
-  //     {
-  //       currentCount = value;
-  //       CurrentCountChanged.InvokeAsync(currentCount);
-  //     }
-  //   }
-  // }
-
-  // private int increment = 1;
 
   [Parameter]
   public int Increment { get; set; } = 1;
-  // {
-  //   get => increment;
-  //   set
-  //   {
-  //     if (value != increment)
-  //     {
-  //       increment = value;
-  //       IncrementChanged.InvokeAsync(increment);
-  //     }
-  //   }
-  // }
 
   [Parameter]
   public EventCallback<int> CurrentCountChanged { get; set; }
@@ -48,5 +23,11 @@
   {
     CurrentCount += Increment;
     await CurrentCountChanged.InvokeAsync(CurrentCount);
+  }
+
+  public async Task SetIncrement(int newIncrement)
+  {
+    Increment = newIncrement;
+    await IncrementChanged.InvokeAsync(Increment);
   }
 }

@@ -1,6 +1,8 @@
 ﻿@page "/weather"
+@using Microsoft.Extensions.Logging
 
 @inject IWeatherService WeatherService
+@inject ILogger logger
 
 <PageTitle>Weather</PageTitle>
 
@@ -42,6 +44,7 @@ else
 
   protected override async Task OnInitializedAsync()
   {
+    logger.LogInformation("Fetching forecasts");
     forecasts = await WeatherService.GetForecasts();
   }
 }
