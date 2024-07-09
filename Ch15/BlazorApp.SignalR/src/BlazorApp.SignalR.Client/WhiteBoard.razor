@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.SignalR.Client
+
+@implements IAsyncDisposable
+
+<h1>White Board</h1>
+
+<Board LineSegments="@LineSegments"
+       AddSegment="AddLineSegment" />
+
+@code {
+  [Inject]
+  public required NavigationManager navigationManager { get; set; }
+
+  private HubConnection? hubConnection;
+
+  private List<LineSegment> LineSegments = [];
+
+  private async Task AddLineSegment(LineSegment segment)
+  {
+    List<LineSegment> segments = [segment];
+    await hubConnection!.SendAsync("SendSegments", segments);
+    LineSegments.AddRange(segments);
+  }
+
+  protected override async Task OnInitializedAsync()
+  {
+    this.hubConnection = new HubConnectionBuilder()
+    .WithUrl(navigationManager.ToAbsoluteUri("/board"))
+    .Build();
+
+    this.hubConnection.On<IEnumerable<LineSegment>>("AddSegments",
+    segments =>
+    {
+      LineSegments.AddRange(segments);
+      StateHasChanged();
+    });
+
+    this.hubConnection.On<List<LineSegment>>("InitSegments",
+    allSegments =>
+    {
+      LineSegments.AddRange(allSegments);
+      StateHasChanged();
+    });
+    await hubConnection.StartAsync();
+    await hubConnection.SendAsync("GetAllSegments");
+  }
+
+  public async ValueTask DisposeAsync()
+  {
+    if (hubConnection is not null)
+    {
+      await hubConnection.DisposeAsync();
+    }
+  }
+}

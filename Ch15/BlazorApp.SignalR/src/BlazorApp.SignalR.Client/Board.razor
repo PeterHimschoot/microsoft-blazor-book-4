@@ -1,0 +1,72 @@
+﻿@using System.Drawing
+
+<canvas width="600" height="600"
+        @onmousedown="@MouseDown"
+        @onmouseup="MouseUp"
+        @onmousemove="MouseMove"
+        @ref="board">
+</canvas>
+
+@LineSegments.Count
+
+@(canvas != null)
+
+@code {
+  [Inject]
+  public required IJSRuntime JSRuntime { get; set; }
+
+  [Parameter]
+  public required List<LineSegment> LineSegments { get; set; }
+
+  [Parameter]
+  public required Func<LineSegment, Task> AddSegment { get; set; }
+
+  public ElementReference board = default!;
+
+  private PointF lastPos = new PointF(0, 0);
+  private DateTime lastEvent;
+  private bool trackMouse = false;
+
+  private IJSObjectReference? canvas = default;
+
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if( this.canvas is null)
+    {
+      this.canvas = await JSRuntime.InvokeAsync<IJSObjectReference>
+        ("import", "./scripts/canvas.js");
+    }
+
+    if (this.canvas is not null)
+    {
+      await this.canvas
+      .InvokeVoidAsync("drawLines", this.board, LineSegments);
+    }
+  }
+
+  private void MouseDown(MouseEventArgs e)
+  {
+    if (e.Button == (int)MouseButton.Left)
+    {
+      this.trackMouse = true;
+      this.lastPos = new ((float)e.OffsetX, (float)e.OffsetY);
+    }
+  }
+
+  private void MouseUp(MouseEventArgs e)
+   => this.trackMouse = false;
+
+  private void MouseMove(MouseEventArgs e)
+  {
+    PointF currentPos = new((float)e.OffsetX, (float)e.OffsetY);
+    DateTime currentEvent = DateTime.Now;
+    TimeSpan time = currentEvent - this.lastEvent;
+    if (this.trackMouse && time.TotalMilliseconds > 200)
+    {
+      AddSegment.Invoke(new LineSegment
+        { Start = this.lastPos, End = currentPos });
+      this.lastEvent = currentEvent;
+      this.lastPos = currentPos;
+    }
+  }
+}
