@@ -23,7 +23,7 @@ public class WeatherForecastProtoService
     ServerCallContext context)
   {
     IEnumerable<weatherForecast>? forecasts =
-    Enumerable.Range(1, 5).Select(index => new weatherForecast
+    Enumerable.Range(1, 250).Select(index => new weatherForecast
     {
       Date = Timestamp.FromDateTime(
         DateTime.UtcNow.AddDays(index)),

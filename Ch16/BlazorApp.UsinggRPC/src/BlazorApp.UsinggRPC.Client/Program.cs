@@ -8,7 +8,7 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddHttpClient(nameof(IWeatherService), httpClient =>
   httpClient.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
-// builder.Services.AddScoped<IWeatherService, WeatherServiceProxy>();
+//builder.Services.AddScoped<IWeatherService, WeatherServiceProxy>();
 
 builder.Services.AddScoped<IWeatherService, ForecastGrpcService>();
 
@@ -18,7 +18,7 @@ builder.Services.AddScoped(services =>
    services.GetRequiredService<IConfiguration>();
    string backEndUrl = config["gRPC:weatherServices"]!;
    var httpHandler =
-   new GrpcWebHandler(GrpcWebMode.GrpcWebText,
+   new GrpcWebHandler(GrpcWebMode.GrpcWeb/*Text*/,
    new HttpClientHandler());
    return GrpcChannel.ForAddress(backEndUrl,
    new GrpcChannelOptions { HttpHandler = httpHandler });

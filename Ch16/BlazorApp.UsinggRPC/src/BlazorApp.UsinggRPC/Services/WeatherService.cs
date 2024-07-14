@@ -18,7 +18,7 @@ public class WeatherService : IWeatherService
 
     var startDate = DateOnly.FromDateTime(DateTime.Now);
     var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-    WeatherForecast[] forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+    WeatherForecast[] forecasts = Enumerable.Range(1, 250).Select(index => new WeatherForecast
     {
       Date = startDate.AddDays(index),
       TemperatureC = Random.Shared.Next(-20, 55),
