@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.WASMInteractivity", "BlazorApp.WASMInteractivity\BlazorApp.WASMInteractivity\BlazorApp.WASMInteractivity.csproj", "{318ED6D0-0E95-4292-A37E-D98A39D4F94E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.WASMInteractivity.Client", "BlazorApp.WASMInteractivity\BlazorApp.WASMInteractivity.Client\BlazorApp.WASMInteractivity.Client.csproj", "{87D4FDBF-BCD6-42CC-A96A-8AEDC40D805A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{318ED6D0-0E95-4292-A37E-D98A39D4F94E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318ED6D0-0E95-4292-A37E-D98A39D4F94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318ED6D0-0E95-4292-A37E-D98A39D4F94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318ED6D0-0E95-4292-A37E-D98A39D4F94E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87D4FDBF-BCD6-42CC-A96A-8AEDC40D805A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D4FDBF-BCD6-42CC-A96A-8AEDC40D805A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D4FDBF-BCD6-42CC-A96A-8AEDC40D805A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D4FDBF-BCD6-42CC-A96A-8AEDC40D805A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5028EC0F-6666-40B4-9FD6-8B3B0DDD31E9}
+	EndGlobalSection
+EndGlobal

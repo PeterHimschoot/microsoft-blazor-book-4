@@ -1,0 +1,23 @@
+﻿@page "/"
+@using BlazorApp.AutoInteractivity.Client.Pages
+
+@inject RenderModeProvider renderModeProvider
+
+<PageTitle>Home</PageTitle>
+
+<h1>Home</h1>
+<p>@renderModeProvider.GetRenderMode(this)</p>
+
+Welcome to your new app.
+
+<div>
+  <Counter @rendermode=InteractiveServer/>
+</div>
+
+<div>
+  <Counter @rendermode=InteractiveWebAssembly />
+</div>
+
+<div>
+  <Counter @rendermode=InteractiveAuto />
+</div>

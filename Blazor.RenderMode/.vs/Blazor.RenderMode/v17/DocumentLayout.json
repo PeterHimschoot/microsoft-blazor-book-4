@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{31BF1F0F-3642-4840-B5E2-6C3066A20210}|Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.rendermode\\blazor.rendermode\\blazor.rendermode.client\\rendermodeprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31BF1F0F-3642-4840-B5E2-6C3066A20210}|Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj|solutionrelative:blazor.rendermode\\blazor.rendermode.client\\rendermodeprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C632F32-5896-4E51-BA24-FFDF7A212268}|Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.rendermode\\blazor.rendermode\\blazor.rendermode\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3C632F32-5896-4E51-BA24-FFDF7A212268}|Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.csproj|solutionrelative:blazor.rendermode\\blazor.rendermode\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C632F32-5896-4E51-BA24-FFDF7A212268}|Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.rendermode\\blazor.rendermode\\blazor.rendermode\\activecircuithandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C632F32-5896-4E51-BA24-FFDF7A212268}|Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.csproj|solutionrelative:blazor.rendermode\\blazor.rendermode\\activecircuithandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31BF1F0F-3642-4840-B5E2-6C3066A20210}|Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.rendermode\\blazor.rendermode\\blazor.rendermode.client\\activecircuitstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31BF1F0F-3642-4840-B5E2-6C3066A20210}|Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj|solutionrelative:blazor.rendermode\\blazor.rendermode.client\\activecircuitstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31BF1F0F-3642-4840-B5E2-6C3066A20210}|Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.rendermode\\blazor.rendermode\\blazor.rendermode.client\\rendermodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31BF1F0F-3642-4840-B5E2-6C3066A20210}|Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj|solutionrelative:blazor.rendermode\\blazor.rendermode.client\\rendermodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{31BF1F0F-3642-4840-B5E2-6C3066A20210}|Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj|c:\\code\\github\\microsoft-blazor-book-4\\blazor.rendermode\\blazor.rendermode\\blazor.rendermode.client\\blazor.rendermode.client.csproj||{4C9BC7A2-907A-44AA-99EA-D1B57B1A20F8}",
+      "RelativeMoniker": "D:0:0:{31BF1F0F-3642-4840-B5E2-6C3066A20210}|Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj|solutionrelative:blazor.rendermode\\blazor.rendermode.client\\blazor.rendermode.client.csproj||{4C9BC7A2-907A-44AA-99EA-D1B57B1A20F8}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +26,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:136:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
             },
             {
               "$type": "Bookmark",
@@ -57,55 +45,45 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ActiveCircuitHandler.cs",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode\\ActiveCircuitHandler.cs",
-              "RelativeDocumentMoniker": "Blazor.RenderMode\\Blazor.RenderMode\\ActiveCircuitHandler.cs",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode\\ActiveCircuitHandler.cs",
-              "RelativeToolTip": "Blazor.RenderMode\\Blazor.RenderMode\\ActiveCircuitHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T08:49:44.784Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ActiveCircuitState.cs",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\ActiveCircuitState.cs",
-              "RelativeDocumentMoniker": "Blazor.RenderMode\\Blazor.RenderMode.Client\\ActiveCircuitState.cs",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\ActiveCircuitState.cs",
-              "RelativeToolTip": "Blazor.RenderMode\\Blazor.RenderMode.Client\\ActiveCircuitState.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T08:49:32.4Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RenderModes.cs",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\RenderModes.cs",
-              "RelativeDocumentMoniker": "Blazor.RenderMode\\Blazor.RenderMode.Client\\RenderModes.cs",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\RenderModes.cs",
-              "RelativeToolTip": "Blazor.RenderMode\\Blazor.RenderMode.Client\\RenderModes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T08:45:35.868Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RenderModeProvider.cs",
-              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\RenderModeProvider.cs",
-              "RelativeDocumentMoniker": "Blazor.RenderMode\\Blazor.RenderMode.Client\\RenderModeProvider.cs",
-              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\RenderModeProvider.cs",
-              "RelativeToolTip": "Blazor.RenderMode\\Blazor.RenderMode.Client\\RenderModeProvider.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAowCAAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T08:44:56.86Z",
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Blazor.RenderMode\\Blazor.RenderMode\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Blazor.RenderMode\\Blazor.RenderMode\\Components\\Pages\\Home.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-27T14:36:28.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Blazor.RenderMode.Client",
+              "DocumentMoniker": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj",
+              "RelativeDocumentMoniker": "Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj",
+              "ToolTip": "C:\\Code\\GitHub\\microsoft-blazor-book-4\\Blazor.RenderMode\\Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj",
+              "RelativeToolTip": "Blazor.RenderMode\\Blazor.RenderMode.Client\\Blazor.RenderMode.Client.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-27T14:35:20.629Z",
               "EditorCaption": ""
             }
           ]

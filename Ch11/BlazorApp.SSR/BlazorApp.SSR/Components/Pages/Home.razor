@@ -1,0 +1,16 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app on @someDate
+
+@code {
+  public string someDate = string.Empty;
+
+  protected override void OnInitialized()
+  {
+    someDate = DateTime.Now.ToLongDateString();
+  }
+}
