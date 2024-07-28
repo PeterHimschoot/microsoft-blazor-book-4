@@ -1,0 +1,79 @@
+﻿@page "/weather"
+@using BlazorApp.Communication.Client.Entities
+@using BlazorApp.Communication.Client.Services
+@rendermode InteractiveAuto
+
+@implements IDisposable
+@inject IWeatherService WeatherService
+
+@inject PersistentComponentState ApplicationState
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (forecasts == null)
+{
+  <p><em>Loading...</em></p>
+}
+else
+{
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Temp. (F)</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var forecast in forecasts)
+      {
+        <tr>
+          <td>@forecast.Date.ToShortDateString()</td>
+          <td>@forecast.TemperatureC</td>
+          <td>@forecast.TemperatureF</td>
+          <td>@forecast.Summary</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+
+@code {
+  private WeatherForecast[]? forecasts;
+
+  PersistingComponentStateSubscription _sub;
+
+  protected override async Task OnInitializedAsync()
+  {
+    _sub = ApplicationState.RegisterOnPersisting(PersistState);
+
+    WeatherForecast[] state = default!;
+    bool foundInState = ApplicationState
+      .TryTakeFromJson<WeatherForecast[]>("WEATHER", out state);
+
+    if (foundInState && state is not null)
+    {
+      forecasts = state;
+    }
+    else
+    {
+      forecasts = await WeatherService.GetForecasts();
+    }
+  }
+
+  private Task PersistState()
+  {
+    ApplicationState.PersistAsJson("WEATHER", forecasts);
+    return Task.CompletedTask;
+  }
+
+  public void Dispose()
+  {
+    _sub.Dispose();
+  }
+}

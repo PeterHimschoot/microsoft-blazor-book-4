@@ -10,12 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.7" />
- </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Pages\PreRenderedCounter.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
   </ItemGroup>
 
 </Project>

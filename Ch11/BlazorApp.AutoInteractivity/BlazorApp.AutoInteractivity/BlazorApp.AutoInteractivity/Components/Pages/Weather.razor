@@ -1,5 +1,11 @@
 ﻿@page "/weather"
-@attribute [StreamRendering]
+@using BlazorApp.AutoInteractivity.Components
+
+@implements IDisposable
+
+@* @attribute [StreamRendering] *@
+
+@rendermode InteractiveServer
 
 <PageTitle>Weather</PageTitle>
 
@@ -9,56 +15,103 @@
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
+  <p><em>Loading...</em></p>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Temp. (F)</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var forecast in forecasts)
+      {
+        <tr>
+          <td>@forecast.Date.ToShortDateString()</td>
+          <td>@forecast.TemperatureC</td>
+          <td>@forecast.TemperatureF</td>
+          <td>@forecast.Summary</td>
+        </tr>
+      }
+    </tbody>
+  </table>
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
 
-    protected override async Task OnInitializedAsync()
+  private const string FORECASTSKEY = "FORECASTS";
+  private PersistingComponentStateSubscription _subscription = default!;
+
+  [Inject]
+  public required PersistentComponentState ApplicationState { get; set; }
+
+  [Inject]
+  public required ILogger<Weather> Logger { get; set; }
+
+  [Inject]
+  public required RenderModeProvider RenderModeProvider { get; set; }
+
+  private Task PersistState()
+  {
+    ApplicationState.PersistAsJson<string>("X", "TEST");
+    return Task.CompletedTask;
+  }
+
+  private WeatherForecast[]? forecasts;
+
+  protected override async Task OnInitializedAsync()
+  {
+    Logger.LogInformation($"Render Mode = {RenderModeProvider.GetRenderMode(this)}");
+    _subscription = ApplicationState.RegisterOnPersisting(PersistState);
+
+    // WeatherForecast[] savedState;
+
+    // bool foundInState = ApplicationState
+    //   .TryTakeFromJson<WeatherForecast[]>(FORECASTSKEY, out savedState);
+
+    string? savedState;
+
+    bool foundInState = ApplicationState
+      .TryTakeFromJson<string>("X", out savedState);
+
+    if (foundInState && savedState is not null)
     {
-        // Simulate asynchronous loading to demonstrate streaming rendering
-        await Task.Delay(500);
+      Logger.LogInformation("State found in ApplicationState");
+      // forecasts = savedState;
+    }
+    else
+    {
+      Logger.LogInformation("Fetching State");
 
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+      // Simulate asynchronous loading to demonstrate streaming rendering
+      await Task.Delay(500);
+
+      var startDate = DateOnly.FromDateTime(DateTime.Now);
+      var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+      forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
+          Date = startDate.AddDays(index),
+          TemperatureC = Random.Shared.Next(-20, 55),
+          Summary = summaries[Random.Shared.Next(summaries.Length)]
         }).ToArray();
     }
+  }
 
-    private class WeatherForecast
-    {
-        public DateOnly Date { get; set; }
-        public int TemperatureC { get; set; }
-        public string? Summary { get; set; }
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-    }
+  public void Dispose()
+  {
+    _subscription.Dispose();
+  }
+
+  private class WeatherForecast
+  {
+    public DateOnly Date { get; set; }
+    public int TemperatureC { get; set; }
+    public string? Summary { get; set; }
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+  }
 }

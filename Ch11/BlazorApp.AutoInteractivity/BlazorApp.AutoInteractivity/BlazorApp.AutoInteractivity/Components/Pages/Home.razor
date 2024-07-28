@@ -1,23 +1,39 @@
 ﻿@page "/"
 @using BlazorApp.AutoInteractivity.Client.Pages
 
-@inject RenderModeProvider renderModeProvider
+@* @inject RenderModeProvider renderModeProvider *@
 
 <PageTitle>Home</PageTitle>
 
 <h1>Home</h1>
-<p>@renderModeProvider.GetRenderMode(this)</p>
+@* <p>@renderModeProvider.GetRenderMode(this)</p> *@
 
 Welcome to your new app.
 
-<div>
-  <Counter @rendermode=InteractiveServer/>
+@* <div>
+  <Counter @rendermode=InteractiveServer />
+  <Counter @rendermode=noPreRenderInteractiveServer />
 </div>
 
 <div>
   <Counter @rendermode=InteractiveWebAssembly />
+  <Counter @rendermode=noPreRenderInteractiveWebAssembly />
 </div>
 
 <div>
   <Counter @rendermode=InteractiveAuto />
+  <Counter @rendermode=noPreRenderInteractiveAuto />
 </div>
+ *@
+<div>
+  <PreRenderedCounter/>
+</div>
+
+@code {
+  IComponentRenderMode noPreRenderInteractiveServer 
+    = new InteractiveServerRenderMode(prerender: false);
+  IComponentRenderMode noPreRenderInteractiveWebAssembly 
+    = new InteractiveWebAssemblyRenderMode(prerender: false);
+  IComponentRenderMode noPreRenderInteractiveAuto 
+    = new InteractiveAutoRenderMode(prerender: false);
+}

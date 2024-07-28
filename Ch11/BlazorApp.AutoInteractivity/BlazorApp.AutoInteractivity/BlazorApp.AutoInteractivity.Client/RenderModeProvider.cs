@@ -22,6 +22,14 @@ public class RenderModeProvider(ActiveCircuitState activeCircuitState)
     return RenderModes.ServerStatic;
   }
 
+  public bool IsInteractive(ComponentBase page)
+  => GetRenderMode(page) switch
+  {
+    RenderModes.InteractiveWebAssembly => true,
+    RenderModes.InteractiveServer => true,
+    _ => false
+  };
+
   private bool UsesStaticRendering(ComponentBase page)
   => UsesStaticRendering(page.GetType());
 
