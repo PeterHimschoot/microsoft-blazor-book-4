@@ -1,0 +1,88 @@
+﻿@page "/"
+@using Leaflet.Map
+
+@inject IMenuService MenuService
+@inject IOrderService OrderService
+@inject NavigationManager NavigationManager
+
+<PageTitle>The PizzaPlace</PageTitle>
+
+<Menu Pizzas="@State.Pizzas"
+      Selected="AddPizzaToBasket"
+      ShowPizzaInformation="ShowPizzaInformation" />
+
+<Basket @bind-State="@State" />
+
+<CustomerEntry Title="Please enter your details below"
+               @bind-Customer="@State.Customer"
+               SubmitTitle="Place Order"
+               SubmitClicked="SubmitClicked" />
+
+<div class="map">
+  <Map Zoom="17" Markers="@Markers"/>
+</div>
+
+<p>@State.ToJson()</p>
+
+@code {
+
+  // private State State { get; set; } = new();
+
+  [Inject]
+  public required State State { get; set; }
+
+  // {
+  //   Pizzas = [
+  //     new Pizza {
+  //       Id = 1,
+  //       Name = "Pepperoni",
+  //       Price = 8.99M,
+  //       Spiciness = Spiciness.Spicy },
+  //     new Pizza {
+  //       Id = 2,
+  //       Name = "Margherita",
+  //       Price = 7.99M,
+  //       Spiciness = Spiciness.None },
+  //     new Pizza {
+  //       Id = 3,
+  //       Name = "Diavola",
+  //       Price = 9.99M,
+  //       Spiciness = Spiciness.Hot }
+  //   ]
+  // };
+
+  private List<Marker> Markers = [
+    new Marker {
+     X = 4.29660,
+     Y = 50.88022,
+     Description = "Pizza Place" 
+    },
+    new Marker {
+     X = 4.27638,
+     Y = 50.87136,
+     Description = "You",
+     ShowPopup = true 
+    },
+  ];
+
+  protected override async Task OnInitializedAsync()
+  {
+    State.Pizzas = await MenuService.GetMenu();
+  }
+
+  private void AddPizzaToBasket(Pizza pizza)
+  {
+    State.Basket.Add(pizza.Id);
+  }
+
+  private async Task SubmitClicked()
+  {
+    await OrderService.PlaceOrder(State.Customer, State.Basket);
+  }
+
+  private void ShowPizzaInformation(Pizza selected)
+  {
+    // this.State.CurrentPizza = selected;
+    Task.Run(() => this.NavigationManager.NavigateTo($"/pizzainfo/{selected.Id}"));
+  }
+}

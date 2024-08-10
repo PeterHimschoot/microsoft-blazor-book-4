@@ -12,8 +12,7 @@ builder.Services
        .AddTransient<IMenuService, HardCodedMenuService>()
        .AddTransient<IOrderService, ConsoleOrderService>();
 
-// *** Add this line ***
-builder.Services.AddSingleton<State>();
+builder.Services.AddScoped<State>();
 
 WebApplication app = builder.Build();
 

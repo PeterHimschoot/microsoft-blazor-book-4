@@ -1,0 +1,26 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<h3>Render Info</h3>
+<ul>
+  <li>Name: @RendererInfo.Name</li>
+  <li>Is Interactive: @RendererInfo.IsInteractive</li>
+  <li>Assigned Render Mode: @AssignedRenderMode</li>
+</ul>
+
+@code {
+  private int currentCount = 0;
+
+  private void IncrementCount()
+  {
+    Console.WriteLine(RendererInfo.IsInteractive);
+    currentCount++;
+  }
+}
