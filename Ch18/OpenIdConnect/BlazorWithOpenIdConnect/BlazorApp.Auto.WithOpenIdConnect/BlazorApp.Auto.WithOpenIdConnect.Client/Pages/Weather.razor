@@ -1,6 +1,6 @@
 ﻿@page "/weather"
-@using BlazorApp.Server.WithOpenIdConnect.Services
-@using WeatherAPI
+@using BlazorApp.Auto.WithOpenIdConnect.Client.Entities
+@using BlazorApp.Auto.WithOpenIdConnect.Client.Services
 
 <PageTitle>Weather</PageTitle>
 
@@ -38,10 +38,10 @@ else
 }
 
 @code {
-  private WeatherForecast[]? forecasts;
+  private IEnumerable<WeatherForecast>? forecasts;
 
   [Inject]
-  public WeatherService WeatherService { get; set; }
+  public required IWeatherService WeatherService { get; set; }
 
   protected override async Task OnInitializedAsync()
   {

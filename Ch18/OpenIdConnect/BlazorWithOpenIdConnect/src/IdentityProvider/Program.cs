@@ -11,13 +11,14 @@ internal class Program
     builder.Services
       .AddIdentityServer(options =>
       {
-        // https://docs.duendesoftware.com/identityserver/v6/fundamentals/resources/api_scopes#authorization-based-on-scopes
         options.EmitStaticAudienceClaim = true;
       })
       .AddInMemoryIdentityResources(Config.GetIdentityResources())
       .AddTestUsers(Config.GetUsers())
       .AddInMemoryClients(Config.GetClients())
       .AddDeveloperSigningCredential()
+      .AddInMemoryApiScopes(Config.GetApiScopes())
+      .AddInMemoryApiResources(Config.GetApiResources())
     ;
 
     var app = builder.Build();

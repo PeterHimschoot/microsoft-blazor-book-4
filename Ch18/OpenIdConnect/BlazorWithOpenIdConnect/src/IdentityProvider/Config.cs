@@ -20,6 +20,8 @@ public class Config
         new Claim("given_name", "Peter"),
         new Claim(JwtClaimTypes.Name, "Peter Himschoot"),
         new Claim("family_name", "Himschoot"),
+        new Claim("country", "BE"),
+        new Claim("role","admin")
       }
     },
     new TestUser
@@ -32,6 +34,8 @@ public class Config
         new Claim("given_name", "Student"),
         new Claim(JwtClaimTypes.Name, "Student Blazor"),
         new Claim("family_name", "Blazor"),
+        new Claim("country", "UK"),
+        new Claim("role","tester")
       }
     }
   ];
@@ -40,6 +44,12 @@ public class Config
   => [
     new IdentityResources.OpenId(),
     new IdentityResources.Profile(),
+    new IdentityResource(name: "country",
+      displayName: "User country",
+      userClaims: [ "country" ]),
+    new IdentityResource(name: "roles",
+      displayName: "User role(s)",
+      userClaims: [ "role" ]),
   ];
 
   public static IEnumerable<Client> GetClients()
@@ -49,18 +59,52 @@ public class Config
       ClientName = "Blazor Server",
       ClientId = "BlazorServer",
       AllowedGrantTypes = GrantTypes.Hybrid,
-      RedirectUris = new List<string>{
-        "https://localhost:5001/signin-oidc"
-      },
+      RedirectUris = ["https://localhost:5002/signin-oidc"],
+      PostLogoutRedirectUris = [ "https://localhost:5002/" ],
       RequirePkce = false,
       AllowedScopes = {
         IdentityServerConstants.StandardScopes.OpenId,
-        IdentityServerConstants.StandardScopes.Profile
+        IdentityServerConstants.StandardScopes.Profile,
+        "country",
+        "roles",
+        "u2uApi"
       },
       ClientSecrets = { new Secret("u2u-secret".Sha512()) },
       RequireConsent = true
+    },
+    new Client
+    {
+      ClientName = "Blazor Auto",
+      ClientId = "BlazorAuto",
+      AllowedGrantTypes = GrantTypes.Code,
+      RedirectUris = new List<string>{
+        "https://localhost:5001/signin-oidc"
+      },
+      LogoUri = "https://www.u2u.be/images/U2U_logo.svg",
+      PostLogoutRedirectUris = [ "https://localhost:5001/" ],
+      RequirePkce = false,
+      AllowedScopes = {
+        IdentityServerConstants.StandardScopes.OpenId,
+        IdentityServerConstants.StandardScopes.Profile,
+        IdentityServerConstants.StandardScopes.OfflineAccess,
+        "country"
+      },
+      ClientSecrets = { new Secret("u2u-secret".Sha512()) },
+      RequireConsent = true,
+      AllowOfflineAccess = true
     }
   ];
 
+  public static IEnumerable<ApiScope> GetApiScopes()
+  => [
+    new ApiScope("u2uApi", "U2U API")
+  ];
 
+  public static IEnumerable<ApiResource> GetApiResources()
+  => [
+    new ApiResource("u2uApi", "U2U API")
+    {
+        Scopes = { "u2uApi" }
+    }
+  ];
 }

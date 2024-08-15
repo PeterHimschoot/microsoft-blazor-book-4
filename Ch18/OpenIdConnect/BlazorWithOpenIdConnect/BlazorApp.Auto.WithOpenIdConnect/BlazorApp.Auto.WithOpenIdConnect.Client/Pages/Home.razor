@@ -14,20 +14,16 @@
   {
     <p>@claim.Type - @claim.Value</p>
   }
+
+  <p>@OperatingSystem.IsBrowser()</p>
 }
-
-<AuthorizeView Roles="admin">
-  <Authorized>
-    Hey, you're an admin!
-  </Authorized>
-</AuthorizeView>
-
 
 @code {
 
   [Inject]
-  public required AuthenticationStateProvider 
-    AuthenticationStateProvider { get; set; }
+  public required AuthenticationStateProvider
+    AuthenticationStateProvider
+  { get; set; }
 
   private IEnumerable<Claim>? Claims { get; set; }
 

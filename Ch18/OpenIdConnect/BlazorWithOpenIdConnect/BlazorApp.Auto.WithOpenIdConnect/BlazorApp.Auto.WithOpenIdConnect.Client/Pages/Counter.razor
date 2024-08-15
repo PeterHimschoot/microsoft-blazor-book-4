@@ -1,9 +1,6 @@
 ﻿@page "/counter"
-@using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
 @using System.Security.Claims
-
-@attribute [Authorize(Roles = "admin")]
 
 <PageTitle>Counter</PageTitle>
 
@@ -20,9 +17,9 @@
 
   public string UserName { get; set; } = "Unknown";
 
-  protected override async Task OnInitializedAsync()
+  protected override  async Task OnInitializedAsync()
   {
-    if (AuthenticationStateTask is null)
+    if( AuthenticationStateTask is null)
     {
       return;
     }

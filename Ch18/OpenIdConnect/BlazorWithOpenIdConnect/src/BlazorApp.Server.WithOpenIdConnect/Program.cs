@@ -1,6 +1,9 @@
 using BlazorApp.Server.WithOpenIdConnect.Components;
+using BlazorApp.Server.WithOpenIdConnect.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.IdentityModel.Tokens;
 
 internal class Program
 {
@@ -31,7 +34,31 @@ internal class Program
         // It's recommended to always get claims from the 
         // UserInfoEndpoint during the flow. 
         options.GetClaimsFromUserInfoEndpoint = true;
+        options.Scope.Add("country");
+        options.ClaimActions.MapUniqueJsonKey("country", "country");
+
+        options.Scope.Add("roles");
+        options.ClaimActions.MapUniqueJsonKey("role", "role");
+        options.TokenValidationParameters = new()
+        {
+          RoleClaimType = "role"
+        };
+
+        // Save the tokens we receive from the IDP
+        options.SaveTokens = true;
+
+        options.Scope.Add("u2uApi");
       });
+
+    builder.Services.AddCascadingAuthenticationState();
+
+    builder.Services.AddAccessTokenManagement();
+    builder.Services.AddUserAccessTokenHttpClient(nameof(WeatherService), null,
+      client =>
+      {
+        client.BaseAddress = new Uri("https://localhost:5005");
+      });
+      builder.Services.AddScoped<WeatherService>();
 
     // Add services to the container.
     builder.Services.AddRazorComponents()
@@ -56,6 +83,8 @@ internal class Program
 
     app.MapRazorComponents<App>()
         .AddInteractiveServerRenderMode();
+
+    app.MapGroup("/authentication").MapLoginAndLogout();
 
     app.Run();
   }
