@@ -7,19 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{80948038-C80
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityProvider", "src\IdentityProvider\IdentityProvider.csproj", "{BC56F1B0-89ED-43C7-8CDB-141060D9914C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "is", "src\is\is.csproj", "{C3226FDB-62CF-4C29-A374-CBC1CFAAC36D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Server.WithOpenIdConnect", "src\BlazorApp.Server.WithOpenIdConnect\BlazorApp.Server.WithOpenIdConnect.csproj", "{537FECBD-4B79-4589-912E-529F57B92C3D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Auto.WithOpenIdConnect", "BlazorApp.Auto.WithOpenIdConnect\BlazorApp.Auto.WithOpenIdConnect\BlazorApp.Auto.WithOpenIdConnect.csproj", "{803B6991-326B-4068-A817-C24C6B08529D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Auto.WithOpenIdConnect.Client", "BlazorApp.Auto.WithOpenIdConnect\BlazorApp.Auto.WithOpenIdConnect.Client\BlazorApp.Auto.WithOpenIdConnect.Client.csproj", "{3507817B-F28F-4912-AC92-5F16AC641F68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherAPI", "src\WeatherAPI\WeatherAPI.csproj", "{5C12E726-EDEE-4F87-9CE3-044A465DFA84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Policies", "src\BlazorApp.Policies\BlazorApp.Policies.csproj", "{56BCAE1B-F5EF-443F-9D87-F824C358CFCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.WASM.WithOpenIdConnect", "src\BlazorApp.WASM.WithOpenIdConnect\BlazorApp.WASM.WithOpenIdConnect.csproj", "{FB461424-01E2-4A74-8E71-7DE05677BDB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Auto.WithOpenIdConnect", "src\BlazorApp.Auto.WithOpenIdConnect\BlazorApp.Auto.WithOpenIdConnect.csproj", "{492E5F29-7F98-436C-94A3-3C7B314A17AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Auto.WithOpenIdConnect.Client", "src\BlazorApp.Auto.WithOpenIdConnect.Client\BlazorApp.Auto.WithOpenIdConnect.Client.csproj", "{5A188560-61BB-466E-95FE-BFB51F4BAC1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,22 +29,10 @@ Global
 		{BC56F1B0-89ED-43C7-8CDB-141060D9914C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC56F1B0-89ED-43C7-8CDB-141060D9914C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC56F1B0-89ED-43C7-8CDB-141060D9914C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3226FDB-62CF-4C29-A374-CBC1CFAAC36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3226FDB-62CF-4C29-A374-CBC1CFAAC36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3226FDB-62CF-4C29-A374-CBC1CFAAC36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3226FDB-62CF-4C29-A374-CBC1CFAAC36D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{537FECBD-4B79-4589-912E-529F57B92C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{537FECBD-4B79-4589-912E-529F57B92C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{537FECBD-4B79-4589-912E-529F57B92C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{537FECBD-4B79-4589-912E-529F57B92C3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{803B6991-326B-4068-A817-C24C6B08529D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{803B6991-326B-4068-A817-C24C6B08529D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{803B6991-326B-4068-A817-C24C6B08529D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{803B6991-326B-4068-A817-C24C6B08529D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3507817B-F28F-4912-AC92-5F16AC641F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3507817B-F28F-4912-AC92-5F16AC641F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3507817B-F28F-4912-AC92-5F16AC641F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3507817B-F28F-4912-AC92-5F16AC641F68}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C12E726-EDEE-4F87-9CE3-044A465DFA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C12E726-EDEE-4F87-9CE3-044A465DFA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C12E726-EDEE-4F87-9CE3-044A465DFA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,19 +45,26 @@ Global
 		{FB461424-01E2-4A74-8E71-7DE05677BDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB461424-01E2-4A74-8E71-7DE05677BDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB461424-01E2-4A74-8E71-7DE05677BDB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492E5F29-7F98-436C-94A3-3C7B314A17AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492E5F29-7F98-436C-94A3-3C7B314A17AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492E5F29-7F98-436C-94A3-3C7B314A17AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492E5F29-7F98-436C-94A3-3C7B314A17AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A188560-61BB-466E-95FE-BFB51F4BAC1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A188560-61BB-466E-95FE-BFB51F4BAC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A188560-61BB-466E-95FE-BFB51F4BAC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A188560-61BB-466E-95FE-BFB51F4BAC1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BC56F1B0-89ED-43C7-8CDB-141060D9914C} = {80948038-C80B-4133-892B-9A7F3D35EE44}
-		{C3226FDB-62CF-4C29-A374-CBC1CFAAC36D} = {80948038-C80B-4133-892B-9A7F3D35EE44}
 		{537FECBD-4B79-4589-912E-529F57B92C3D} = {80948038-C80B-4133-892B-9A7F3D35EE44}
-		{803B6991-326B-4068-A817-C24C6B08529D} = {80948038-C80B-4133-892B-9A7F3D35EE44}
-		{3507817B-F28F-4912-AC92-5F16AC641F68} = {80948038-C80B-4133-892B-9A7F3D35EE44}
 		{5C12E726-EDEE-4F87-9CE3-044A465DFA84} = {80948038-C80B-4133-892B-9A7F3D35EE44}
 		{56BCAE1B-F5EF-443F-9D87-F824C358CFCE} = {80948038-C80B-4133-892B-9A7F3D35EE44}
 		{FB461424-01E2-4A74-8E71-7DE05677BDB5} = {80948038-C80B-4133-892B-9A7F3D35EE44}
+		{492E5F29-7F98-436C-94A3-3C7B314A17AC} = {80948038-C80B-4133-892B-9A7F3D35EE44}
+		{5A188560-61BB-466E-95FE-BFB51F4BAC1C} = {80948038-C80B-4133-892B-9A7F3D35EE44}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E0094BF-A398-4E9D-BBA9-6DDB21FFAF9C}
