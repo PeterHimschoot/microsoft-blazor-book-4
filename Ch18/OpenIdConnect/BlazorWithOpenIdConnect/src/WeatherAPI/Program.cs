@@ -1,3 +1,5 @@
+using BlazorApp.Policies;
+
 internal class Program
 {
   private static void Main(string[] args)
@@ -29,6 +31,12 @@ internal class Program
         opt.Authority = "https://localhost:5011";
         opt.Audience = "u2uApi";
       });
+
+    builder.Services.AddAuthorization(options =>
+    {
+      options.AddPolicy(Policies.FromBelgium,
+        Policies.FromBelgiumPolicy());
+    });
 
 
     var app = builder.Build();

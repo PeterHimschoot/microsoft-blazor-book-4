@@ -72,6 +72,30 @@ public class Config
       ClientSecrets = { new Secret("u2u-secret".Sha512()) },
       RequireConsent = true
     },
+    new Client {
+      ClientName = "BlazorWasm",
+      ClientId = "BlazorWasm",
+      AllowedGrantTypes = GrantTypes.Code,
+      RequirePkce = true,
+      RequireClientSecret = false,
+      RedirectUris = new List<string>{
+        "https://localhost:5003/authentication/login-callback"
+      },
+      PostLogoutRedirectUris = new List<string> {
+        "https://localhost:5003/authentication/logout-callback"
+      },
+      AllowedCorsOrigins = {
+        "https://localhost:5003"
+      },
+      AllowedScopes = {
+        IdentityServerConstants.StandardScopes.OpenId,
+        IdentityServerConstants.StandardScopes.Profile,
+        "u2uApi",
+        "roles", 
+        "country"
+      }
+      // RequireConsent = true
+    },
     new Client
     {
       ClientName = "Blazor Auto",
@@ -104,7 +128,8 @@ public class Config
   => [
     new ApiResource("u2uApi", "U2U API")
     {
-        Scopes = { "u2uApi" }
+        Scopes = [ "u2uApi" ],
+        UserClaims = [ "country" ]
     }
   ];
 }

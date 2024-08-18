@@ -1,3 +1,4 @@
+using BlazorApp.Policies;
 using BlazorApp.Server.WithOpenIdConnect.Components;
 using BlazorApp.Server.WithOpenIdConnect.Services;
 using Microsoft.AspNetCore.Authentication;
@@ -59,6 +60,13 @@ internal class Program
         client.BaseAddress = new Uri("https://localhost:5005");
       });
       builder.Services.AddScoped<WeatherService>();
+
+    // Policies
+    builder.Services.AddAuthorization(options =>
+    {
+      options.AddPolicy(Policies.FromBelgium,
+        Policies.FromBelgiumPolicy());
+    });
 
     // Add services to the container.
     builder.Services.AddRazorComponents()
