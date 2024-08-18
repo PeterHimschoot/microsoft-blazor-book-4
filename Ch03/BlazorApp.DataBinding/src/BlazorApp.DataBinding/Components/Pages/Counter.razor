@@ -18,7 +18,7 @@
          @onkeypress:preventDefault />
 </p>
 
-<p><input type="number" @bind="@increment" @bind:event="oninput" /></p>
+<p><input type="number" @bind-value="@increment" @bind-value:event="oninput" /></p>
 
 @* <p>
   <input type="number"
@@ -33,8 +33,8 @@
 </button>
 
 @* Add this after the Click me button *@
-<button class="btn btn-primary" @onclick="AutoIncrement">Auto</button>
-
+@* <button class="btn btn-primary" @onclick="AutoIncrement">Auto</button>
+ *@
 
 @* <button class="btn btn-primary"
         disabled="@(currentCount >= 10)"
@@ -42,7 +42,7 @@
   Click me
 </button> *@
 
-<h1>Stop Propagation</h1>
+@* <h1>Stop Propagation</h1>
 
 <div class="background"
      @onmousemove="OuterMouseMove">
@@ -52,7 +52,7 @@
   @onmousemove:stopPropagation>
     <p>@innerPos</p>
   </div>
-</div>
+</div> *@
 
 @code {
   private int currentCount = 0;
