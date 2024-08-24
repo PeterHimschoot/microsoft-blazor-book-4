@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 internal class Program
@@ -49,6 +50,8 @@ internal class Program
         options.Scope.Add("country");
         options.ClaimActions.MapUniqueJsonKey("country", "country");
 
+        options.Scope.Add("u2uApi");
+
         // It's recommended to always get claims from the 
         // UserInfoEndpoint during the flow. 
         options.GetClaimsFromUserInfoEndpoint = true;
@@ -59,12 +62,14 @@ internal class Program
 
     // builder.Services.ConfigureCookieOidcRefresh(CookieAuthenticationDefaults.AuthenticationScheme, MS_OIDC_SCHEME);
 
-    builder.Services.AddAuthorization(options => {
+    builder.Services.AddAuthorization(options =>
+    {
       options.AddPolicy(Policies.FromBelgium, Policies.FromBelgiumAuthorizationPolicy());
     });
     builder.Services.AddCascadingAuthenticationState();
     builder.Services.AddScoped<AuthenticationStateProvider, PersistingAuthenticationStateProvider>();
     builder.Services.AddHttpContextAccessor();
+
     // ConfigureCookieOidcRefresh attaches a cookie OnValidatePrincipal callback to get
     // a new access token when the current one expires, and reissue a cookie with the
     // new access token saved inside. If the refresh fails, the user will be signed
@@ -72,7 +77,20 @@ internal class Program
     // scope.
     builder.Services.ConfigureCookieOidcRefresh(CookieAuthenticationDefaults.AuthenticationScheme, OpenIdConnectDefaults.AuthenticationScheme);
 
-    builder.Services.AddSingleton<IWeatherService, WeatherService>();
+    // This will provide the access_token
+    builder.Services.AddAccessTokenManagement();
+    
+    builder.Services.AddHttpClient<ExternalWeatherService>(
+      client =>
+      {
+        client.BaseAddress = new Uri("https://localhost:5005");
+      });
+
+    // Services for Weather component when running server side
+
+    builder.Services.AddScoped<IWeatherService, WeatherService>();
+    builder.Services.AddScoped<IExternalWeatherService, WeatherService>();
+
 
     var app = builder.Build();
 
@@ -93,7 +111,7 @@ internal class Program
     app.UseStaticFiles();
     app.UseAntiforgery();
 
-    app.MapGet("/forecasts", 
+    app.MapGet("/forecasts-internal",
       async ValueTask<IEnumerable<WeatherForecast>> (IWeatherService weatherService) =>
     {
       return await weatherService.GetForecastsAsync();
@@ -104,6 +122,13 @@ internal class Program
         .AddInteractiveServerRenderMode()
         .AddInteractiveWebAssemblyRenderMode()
         .AddAdditionalAssemblies(typeof(BlazorApp.Auto.WithOpenIdConnect.Client._Imports).Assembly);
+
+    app.MapGet("forecasts-forwarder", async ([FromServices] ExternalWeatherService weatherService) =>
+    {
+      return await weatherService.GetForecastsAsync();
+    })
+    .RequireAuthorization(Policies.FromBelgium);
+
 
     app.MapGroup("/authentication").MapLoginAndLogout();
 

@@ -16,11 +16,19 @@ internal class Program
     builder.Services.AddCascadingAuthenticationState();
     builder.Services.AddSingleton<AuthenticationStateProvider, PersistentAuthenticationStateProvider>();
 
+    // Services for Weather component when running in browser
+
     builder.Services.AddHttpClient<IWeatherService, WeatherServiceProxy>(
-    httpClient =>
-    {
-      httpClient.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress);
-    });
+      httpClient =>
+      {
+        httpClient.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress);
+      });
+
+    builder.Services.AddHttpClient<IExternalWeatherService, ExternalWeatherServiceProxy>(
+      httpClient =>
+      {
+        httpClient.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress);
+      });
 
     await builder.Build().RunAsync();
   }

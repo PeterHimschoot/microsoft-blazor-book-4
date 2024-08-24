@@ -3,15 +3,15 @@ using System.Net.Http.Json;
 
 namespace BlazorApp.Auto.WithOpenIdConnect.Client.Services;
 
-public class WeatherServiceProxy : IWeatherService
+public class ExternalWeatherServiceProxy : IExternalWeatherService
 {
   private readonly HttpClient _httpClient;
 
-  public WeatherServiceProxy(HttpClient httpClient)
+  public ExternalWeatherServiceProxy(HttpClient httpClient)
   {
     _httpClient = httpClient;
   }
 
   public async ValueTask<IEnumerable<WeatherForecast>> GetForecastsAsync()
-  => await _httpClient.GetFromJsonAsync<WeatherForecast[]>("/forecasts-internal") ?? [];
+  => await _httpClient.GetFromJsonAsync<WeatherForecast[]>("/forecasts-forwarder") ?? [];
 }

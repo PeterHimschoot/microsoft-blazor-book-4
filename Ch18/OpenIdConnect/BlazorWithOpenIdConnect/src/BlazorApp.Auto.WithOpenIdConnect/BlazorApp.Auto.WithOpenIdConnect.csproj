@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IdentityModel.AspNetCore" Version="4.3.0" />
     <ProjectReference Include="..\BlazorApp.Auto.WithOpenIdConnect.Client\BlazorApp.Auto.WithOpenIdConnect.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.8" />

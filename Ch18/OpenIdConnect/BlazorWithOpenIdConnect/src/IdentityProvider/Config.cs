@@ -15,28 +15,28 @@ public class Config
       SubjectId = "{223C9865-03BE-4951-8911-740A438FCF9D}",
       Username = "peter@u2u.be",
       Password = "u2u-secret",
-      Claims = new List<Claim>
-      {
+      Claims =
+      [
         new Claim("given_name", "Peter"),
         new Claim(JwtClaimTypes.Name, "Peter Himschoot"),
         new Claim("family_name", "Himschoot"),
         new Claim("country", "BE"),
         new Claim("role","admin")
-      }
+      ]
     },
     new TestUser
     {
       SubjectId = "{34119795-78A6-44C2-B128-30BFBC29139D}",
       Username = "student@u2u.be",
       Password = "u2u-secret",
-      Claims = new List<Claim>
-      {
+      Claims =
+      [
         new Claim("given_name", "Student"),
         new Claim(JwtClaimTypes.Name, "Student Blazor"),
         new Claim("family_name", "Blazor"),
         new Claim("country", "UK"),
         new Claim("role","tester")
-      }
+      ]
     }
   ];
 
@@ -78,12 +78,12 @@ public class Config
       AllowedGrantTypes = GrantTypes.Code,
       RequirePkce = true,
       RequireClientSecret = false,
-      RedirectUris = new List<string>{
+      RedirectUris = [
         "https://localhost:5003/authentication/login-callback"
-      },
-      PostLogoutRedirectUris = new List<string> {
+      ],
+      PostLogoutRedirectUris = [
         "https://localhost:5003/authentication/logout-callback"
-      },
+      ],
       AllowedCorsOrigins = {
         "https://localhost:5003"
       },
@@ -91,7 +91,7 @@ public class Config
         IdentityServerConstants.StandardScopes.OpenId,
         IdentityServerConstants.StandardScopes.Profile,
         "u2uApi",
-        "roles", 
+        "roles",
         "country"
       }
       // RequireConsent = true
@@ -101,9 +101,9 @@ public class Config
       ClientName = "Blazor Auto",
       ClientId = "BlazorAuto",
       AllowedGrantTypes = GrantTypes.Code,
-      RedirectUris = new List<string>{
+      RedirectUris = [
         "https://localhost:5001/signin-oidc"
-      },
+      ],
       LogoUri = "https://www.u2u.be/images/U2U_logo.svg",
       PostLogoutRedirectUris = [ "https://localhost:5001/" ],
       RequirePkce = false,
@@ -111,7 +111,8 @@ public class Config
         IdentityServerConstants.StandardScopes.OpenId,
         IdentityServerConstants.StandardScopes.Profile,
         IdentityServerConstants.StandardScopes.OfflineAccess,
-        "country"
+        "country",
+        "u2uApi",
       },
       ClientSecrets = { new Secret("u2u-secret".Sha512()) },
       RequireConsent = true,

@@ -3,7 +3,7 @@ using BlazorApp.Auto.WithOpenIdConnect.Client.Services;
 
 namespace BlazorApp.Auto.WithOpenIdConnect.Services;
 
-public class WeatherService : IWeatherService
+public class WeatherService : IWeatherService, IExternalWeatherService
 {
   static string[] summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
   public ValueTask<IEnumerable<WeatherForecast>> GetForecastsAsync()

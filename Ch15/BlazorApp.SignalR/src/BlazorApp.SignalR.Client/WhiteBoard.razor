@@ -39,7 +39,7 @@
     allSegments =>
     {
       LineSegments.AddRange(allSegments);
-      StateHasChanged();
+      this.InvokeAsync(() => StateHasChanged());
     });
     await hubConnection.StartAsync();
     await hubConnection.SendAsync("GetAllSegments");

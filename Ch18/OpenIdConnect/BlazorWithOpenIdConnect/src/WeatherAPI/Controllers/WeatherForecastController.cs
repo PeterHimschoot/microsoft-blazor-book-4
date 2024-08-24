@@ -20,6 +20,7 @@ public class WeatherForecastController : ControllerBase
   }
 
   //[Authorize]
+  //[Authorize(Roles ="admin")]
   [Authorize(Policy =Policies.FromBelgium)]
   [HttpGet(Name = "GetWeatherForecast")]
   public IEnumerable<WeatherForecast> Get()
