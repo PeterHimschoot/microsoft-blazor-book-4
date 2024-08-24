@@ -7,7 +7,10 @@ namespace BlazorApp.Auto.WithOpenIdConnect;
 
 // This is a server-side AuthenticationStateProvider that uses PersistentComponentState to flow the
 // authentication state to the client which is then fixed for the lifetime of the WebAssembly application.
-internal sealed class PersistingAuthenticationStateProvider : AuthenticationStateProvider, IHostEnvironmentAuthenticationStateProvider, IDisposable
+internal sealed class PersistingAuthenticationStateProvider 
+  : AuthenticationStateProvider
+  , IHostEnvironmentAuthenticationStateProvider
+  , IDisposable
 {
   private readonly PersistentComponentState persistentComponentState;
   private readonly PersistingComponentStateSubscription subscription;
