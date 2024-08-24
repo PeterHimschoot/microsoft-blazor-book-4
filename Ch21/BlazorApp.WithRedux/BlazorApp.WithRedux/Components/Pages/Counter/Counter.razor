@@ -1,0 +1,27 @@
+﻿@page "/counter"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @AppStore.ClickCounter</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+  [Inject]
+  public required IState<AppStore> State { get; set; }
+
+  [Inject]
+  public required IDispatcher Dispatcher { get; set; }
+
+  public AppStore AppStore => State.Value;
+
+  private readonly IncrementCounterAction _incrementCounterAction = new();
+
+  private void IncrementCount()
+  {
+    Dispatcher.Dispatch(_incrementCounterAction);
+  }
+}

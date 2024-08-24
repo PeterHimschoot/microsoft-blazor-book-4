@@ -1,0 +1,60 @@
+﻿@page "/weather"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@using BlazorApp.WithRedux.Entities
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (AppStore.IsLoading && AppStore.Forecasts is not null)
+{
+  <p><em>Loading...</em></p>
+}
+else
+{
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Temp. (F)</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var forecast in AppStore.Forecasts!)
+      {
+        <tr>
+          <td>@forecast.Date.ToShortDateString()</td>
+          <td>@forecast.TemperatureC</td>
+          <td>@forecast.TemperatureF</td>
+          <td>@forecast.Summary</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+
+@code {
+  [Inject]
+  public required IState<AppStore> State { get; set; }
+
+  [Inject]
+  public required IDispatcher Dispatcher { get; set; }
+
+  public AppStore AppStore => State.Value;
+
+  private WeatherForecast[]? forecasts;
+
+  private readonly FetchWeatherAction _fetchDataAction = new();
+
+  protected override async Task OnInitializedAsync()
+  {
+    Dispatcher.Dispatch(_fetchDataAction);
+
+    // Simulate asynchronous loading to demonstrate a loading indicator
+  }
+}

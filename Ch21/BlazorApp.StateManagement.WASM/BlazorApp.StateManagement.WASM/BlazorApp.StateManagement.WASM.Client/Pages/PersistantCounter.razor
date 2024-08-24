@@ -1,0 +1,55 @@
+﻿@page "/persistant-counter"
+@using BlazorApp.StateManagement.WASM.Client.Services
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+  private int currentCount = 0;
+
+  [Inject]
+  public required LocalStorage LocalStorage { get; set; }
+
+  public int CurrentCount
+  {
+    get => currentCount;
+    set
+    {
+      if (currentCount != value)
+      {
+        currentCount = value;
+        LocalStorage.SetProperty(nameof(CurrentCount), currentCount);
+      }
+    }
+  }
+
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (firstRender)
+    {
+      await UpdateCounter();
+      await LocalStorage.WatchAsync(this);
+    }
+  }
+
+  [JSInvokable]
+  public async Task UpdateCounter()
+  {
+    try
+    {
+      currentCount = await LocalStorage.GetProperty<int>(nameof(CurrentCount));
+      StateHasChanged();
+    }
+    catch { }
+  }
+
+  private void IncrementCount()
+  {
+    CurrentCount++;
+  }
+}

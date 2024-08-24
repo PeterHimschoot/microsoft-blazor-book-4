@@ -1,0 +1,54 @@
+﻿@page "/state-counter"
+@using BlazorApp.StateManagement.WASM.Client.Services
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+  private int currentCount = 0;
+
+  [Inject]
+  public required StateService StateService { get; set; }
+
+  public int CurrentCount
+  {
+    get => currentCount;
+    set
+    {
+      if (currentCount != value)
+      {
+        currentCount = value;
+        StateService.SetValue(nameof(CurrentCount), currentCount);
+      }
+    }
+  }
+
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (firstRender)
+    {
+      await UpdateCounter();
+    }
+  }
+
+  [JSInvokable]
+  public async Task UpdateCounter()
+  {
+    try
+    {
+      currentCount = await StateService.GetValue(nameof(CurrentCount));
+      StateHasChanged();
+    }
+    catch { }
+  }
+
+  private void IncrementCount()
+  {
+    CurrentCount++;
+  }
+}
