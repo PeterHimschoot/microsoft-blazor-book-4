@@ -2,11 +2,11 @@
 @using BlazorApp.Auto.WithOpenIdConnect.Client.Entities
 @using BlazorApp.Auto.WithOpenIdConnect.Client.Services
 
-<PageTitle>Weather</PageTitle>
+<PageTitle>Weather from External API</PageTitle>
 
-<h1>Weather</h1>
+<h1>Weather from External API</h1>
 
-<p>This component demonstrates showing data.</p>
+<h1>Platform: @(OperatingSystem.IsBrowser() ? "Wasm" : "Server")</h1>
 
 @if (forecasts == null)
 {

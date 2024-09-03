@@ -87,9 +87,8 @@ internal class Program
       });
 
     // Services for Weather component when running server side
-
     builder.Services.AddScoped<IWeatherService, WeatherService>();
-    builder.Services.AddScoped<IExternalWeatherService, WeatherService>();
+    builder.Services.AddScoped<IExternalWeatherService, ExternalWeatherService>();
 
 
     var app = builder.Build();
