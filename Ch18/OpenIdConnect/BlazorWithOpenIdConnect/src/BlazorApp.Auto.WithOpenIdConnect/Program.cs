@@ -20,6 +20,15 @@ internal class Program
   {
     var builder = WebApplication.CreateBuilder(args);
 
+    //builder.WebHost.ConfigureKestrel(options =>
+    //{
+    //  options.ConfigureHttpsDefaults(httpsOptions =>
+    //  {
+    //    // Lower HTTPS for decryption
+    //    httpsOptions.SslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+    //  });
+    //});
+
     // Add services to the container.
     builder.Services.AddRazorComponents()
         .AddInteractiveServerComponents()
@@ -83,6 +92,7 @@ internal class Program
     builder.Services.AddHttpClient<ExternalWeatherService>(
       client =>
       {
+        // change to localhost.fiddler to see traffic in fiddler
         client.BaseAddress = new Uri("https://localhost:5005");
       });
 
