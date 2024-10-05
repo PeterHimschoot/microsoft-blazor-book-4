@@ -7,7 +7,16 @@
 
 <p role="status">Current count: @currentCount</p>
 
+@if( RenderModeProvider.IsInteractive(this))
+{
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+  
+} else
+{
+  <button class="btn btn-secondary" disabled>Click me</button>
+
+}
+
 
 <div>@RenderModeProvider.GetRenderMode(this)</div>
 

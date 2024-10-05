@@ -12,7 +12,7 @@
   [Fact]
   public void IncrementCounterWhenButtonIsClicked()
   {
-    var cut = RenderComponent<Counter>();
+    var cut = Render(@<Counter />);
     cut.Find(cssSelector: "button")
        .Click();
     cut.Find(cssSelector: "p")

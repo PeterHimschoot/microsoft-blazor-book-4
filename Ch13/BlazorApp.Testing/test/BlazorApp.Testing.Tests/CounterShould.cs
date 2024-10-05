@@ -35,7 +35,7 @@ public class CounterShould : TestContext
   {
     IRenderedComponent<Counter> cut = RenderComponent<Counter>();
     cut.Find(cssSelector: "p")
-       .MarkupMatches(@"<p role=""status"">Current count: 0</p>");
+       .MarkupMatches("""<p role="status">Current count: 0</p>""");
   }
 
   [Fact]
